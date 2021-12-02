@@ -8,16 +8,18 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.post-container {
-  display: flex;
-  flex-direction: column;
+table {
+  width: 100%;
+  margin-top: 50px;
 }
 
-.post {
-  display: flex;
-  flex-direction: row;
+table,
+th,
+td {
+  border: 2px solid rgba(0, 0, 0, 0.479);
+  border-collapse: collapse;
 }
 
-.post-detail {
-  margin: 15px;
+.delete-button {
+  margin-top: 20px;
 }

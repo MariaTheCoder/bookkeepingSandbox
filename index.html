@@ -9,7 +9,7 @@
   <title>Bookkeeping-demo</title>
 </head>
 <body>
-  <div class="book-keeping">
+  <div class="bookkeeping">
     <div class="input-container">
       <input class="input" type="date" id="date" name="date">
       <input class="input" type="text" id="text" name="text" placeholder="insert text">
@@ -21,7 +21,19 @@
       <input class="input" type="number" id="offset-account" name="offset-account" placeholder="insert offset account">
       <button class="buttons" id="save-button">SAVE</button>
     </div>
-    <div class="post-container" id="post-container"></div>
+    <div class="display-bookkeeping">
+      <table class="post-container" id="post-container">
+        <tr>
+          <th>Date</th>
+          <th>Transaction text</th>
+          <th>Transaction amount</th>
+          <th>Currency</th>
+          <th>Account</th>
+          <th>Offset account</th>
+        </tr>
+      </table>
+    </div>
+    <button class="buttons delete-button" id="delete-button">DELETE ALL POSTS</button>
   </div>
 </body>
 </html>
