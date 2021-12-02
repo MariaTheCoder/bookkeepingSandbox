@@ -2,6 +2,16 @@ let inputData = {};
 let storedData = [];
 
 document.getElementById("save-button").addEventListener("click", function () {
+  if (
+    !document.getElementById("date").value ||
+    !document.getElementById("text").value ||
+    !document.getElementById("amount").value ||
+    !document.getElementById("currency").value ||
+    !document.getElementById("account").value ||
+    !document.getElementById("offset-account").value
+  )
+    return alert("Please insert values in all input fields before saving");
+
   // firstly, we want to save and store the input data in the inputData object
   inputData = {
     date: document.getElementById("date").value,
@@ -40,6 +50,7 @@ document.getElementById("save-button").addEventListener("click", function () {
 
 function createAndAppendDivChild(tag, innerText, parent) {
   let element = document.createElement(tag);
+  element.className = "post-detail";
   element.innerText = innerText;
   parent.appendChild(element);
   return element;
