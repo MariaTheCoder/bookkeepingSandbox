@@ -5,24 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script defer src="index.js"></script>
-  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="style.css">
   <title>Bookkeeping-demo</title>
 </head>
 <body>
   <div class="book-keeping">
   <div class="input-container">
     <input class="input" type="date" id="date" name="date">
-    <input class="input" type="text" id="text" name="text">
-    <input class="input" type="number" id="amount" name="amount">
+    <input class="input" type="text" id="text" name="text" placeholder="insert text">
+    <input class="input" type="number" id="amount" name="amount" placeholder="insert amount">
     <select class="input" name="select-currency" id="currency">
-      <option value="EUR">EUR</option>
-      <!-- <option value="USD">USD</option> -->
+      <option value="EUR">EUR (€)</option>
     </select>
-    <input class="input" type="number" id="account" name="account">
-    <input class="input" type="number" id="offset-account" name="offset-account">
+    <input class="input" type="number" id="account" name="account" placeholder="insert account">
+    <input class="input" type="number" id="offset-account" name="offset-account" placeholder="insert offset account">
     <button class="buttons" id="save-button">SAVE</button>
   </div>
-  <div class="post-container"></div>
+  <div class="post-container" id="post-container"></div>
 </div>
 </body>
 </html>
