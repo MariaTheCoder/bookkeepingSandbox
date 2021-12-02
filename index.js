@@ -88,7 +88,7 @@ function createActionButtons(action, parent) {
     newAction.innerText = "❌";
   }
 
-  newAction.className = action;
+  newAction.className = action + " post-detail";
   parent.appendChild(newAction);
   return newAction;
 }
