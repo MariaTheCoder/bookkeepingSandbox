@@ -1,5 +1,28 @@
 let inputData = {};
 let storedData = [];
+let accountPlan = [
+  {
+    number: 1010,
+    name: "sales of goods",
+    inclVAT: true,
+    currentTotal: 0,
+    type: "income",
+  },
+  {
+    number: 2040,
+    name: "purchase of goods",
+    inclVAT: true,
+    currentTotal: 0,
+    type: "expense",
+  },
+  {
+    number: 6750,
+    name: "bank account",
+    inclVAT: false,
+    currentTotal: 0,
+    type: "liability",
+  },
+];
 
 document.getElementById("save-button").addEventListener("click", function () {
   if (
@@ -54,4 +77,16 @@ function createAndAppendDivChild(tag, innerText, parent) {
   element.innerText = innerText;
   parent.appendChild(element);
   return element;
+}
+
+function sum(accountNumber) {
+  let sum = 0;
+
+  storedData.forEach((element) => {
+    if (Number(element.account) === accountNumber)
+      sum += Number(element.amount);
+    if (Number(element.offsetAccount) === accountNumber)
+      sum -= Number(element.amount);
+  });
+  return sum;
 }
