@@ -53,12 +53,12 @@ document.getElementById("save-button").addEventListener("click", function () {
   newPost.className = "post";
 
   // use function down below to create new elements, to set inner text and append children to parent element
-  createAndAppendDivChild("td", storedData[0].date, newPost);
-  createAndAppendDivChild("td", storedData[0].text, newPost);
-  createAndAppendDivChild("td", storedData[0].amount, newPost);
-  createAndAppendDivChild("td", storedData[0].currency, newPost);
-  createAndAppendDivChild("td", storedData[0].account, newPost);
-  createAndAppendDivChild("td", storedData[0].offsetAccount, newPost);
+  createAndAppendPostDetails("td", storedData[0].date, newPost);
+  createAndAppendPostDetails("td", storedData[0].text, newPost);
+  createAndAppendPostDetails("td", storedData[0].amount, newPost);
+  createAndAppendPostDetails("td", storedData[0].currency, newPost);
+  createAndAppendPostDetails("td", storedData[0].account, newPost);
+  createAndAppendPostDetails("td", storedData[0].offsetAccount, newPost);
 
   console.log("newPost: ", newPost);
 
@@ -75,7 +75,7 @@ document.getElementById("delete-button").addEventListener("click", function () {
   }
 });
 
-function createAndAppendDivChild(tag, innerText, parent) {
+function createAndAppendPostDetails(tag, innerText, parent) {
   let element = document.createElement(tag);
   element.className = "post-detail";
   element.innerText = innerText;
