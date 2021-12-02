@@ -59,6 +59,8 @@ document.getElementById("save-button").addEventListener("click", function () {
   createAndAppendPostDetails("td", storedData[0].currency, newPost);
   createAndAppendPostDetails("td", storedData[0].account, newPost);
   createAndAppendPostDetails("td", storedData[0].offsetAccount, newPost);
+  createActionButtons("edit", newPost);
+  createActionButtons("delete", newPost);
 
   console.log("newPost: ", newPost);
 
@@ -74,6 +76,22 @@ document.getElementById("delete-button").addEventListener("click", function () {
     elements[0].parentNode.removeChild(elements[0]);
   }
 });
+
+function createActionButtons(action, parent) {
+  let newAction = document.createElement("span");
+
+  if (action === "edit") {
+    newAction.innerText = "🖉";
+  }
+
+  if (action === "delete") {
+    newAction.innerText = "❌";
+  }
+
+  newAction.className = action;
+  parent.appendChild(newAction);
+  return newAction;
+}
 
 function createAndAppendPostDetails(tag, innerText, parent) {
   let element = document.createElement(tag);
@@ -92,5 +110,6 @@ function sum(accountNumber) {
     if (Number(element.offsetAccount) === accountNumber)
       sum -= Number(element.amount);
   });
+
   return sum;
 }
