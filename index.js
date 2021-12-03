@@ -66,6 +66,8 @@ function createOnePost() {
     currency: document.getElementById("currency").value,
     account: document.getElementById("account").value,
     offsetAccount: document.getElementById("offset-account").value,
+    edit: false,
+    delete: false,
   };
 
   // print with console.log to ensure that the data looks right
@@ -88,8 +90,6 @@ function createOnePost() {
   createAndAppendPostDetails("td", storedData[0].offsetAccount, newPost);
   createActionButtons("edit", newPost);
   createActionButtons("delete", newPost);
-
-  console.log("newPost: ", newPost);
 
   // use insertBefore to append innerText of newPost children to element with id post-container
   document.getElementById("post-container").appendChild(newPost);
