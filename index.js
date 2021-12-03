@@ -24,7 +24,30 @@ let accountPlan = [
   },
 ];
 
-document.getElementById("save-button").addEventListener("click", function () {
+document.getElementById("save-button").addEventListener("click", createOnePost);
+
+document
+  .getElementById("delete-button")
+  .addEventListener("click", deleteAllPosts);
+
+function editOnePost() {
+  //
+}
+
+function deleteOnePost() {
+  //
+}
+
+function deleteAllPosts() {
+  storedData = [];
+
+  const elements = document.getElementsByClassName("post-detail");
+  while (elements.length > 0) {
+    elements[0].parentNode.removeChild(elements[0]);
+  }
+}
+
+function createOnePost() {
   if (
     !document.getElementById("date").value ||
     !document.getElementById("text").value ||
@@ -70,16 +93,7 @@ document.getElementById("save-button").addEventListener("click", function () {
 
   // use insertBefore to append innerText of newPost children to element with id post-container
   document.getElementById("post-container").appendChild(newPost);
-});
-
-document.getElementById("delete-button").addEventListener("click", function () {
-  storedData = [];
-
-  const elements = document.getElementsByClassName("post-detail");
-  while (elements.length > 0) {
-    elements[0].parentNode.removeChild(elements[0]);
-  }
-});
+}
 
 function createActionButtons(action, parent) {
   let newAction = document.createElement("span");
