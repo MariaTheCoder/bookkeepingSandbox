@@ -55,7 +55,11 @@ document.getElementById("save-button").addEventListener("click", function () {
   // use function down below to create new elements, to set inner text and append children to parent element
   createAndAppendPostDetails("td", storedData[0].date, newPost);
   createAndAppendPostDetails("td", storedData[0].text, newPost);
-  createAndAppendPostDetails("td", storedData[0].amount, newPost);
+  createAndAppendPostDetails(
+    "td",
+    Number(storedData[0].amount).toFixed(2),
+    newPost
+  );
   createAndAppendPostDetails("td", storedData[0].currency, newPost);
   createAndAppendPostDetails("td", storedData[0].account, newPost);
   createAndAppendPostDetails("td", storedData[0].offsetAccount, newPost);
