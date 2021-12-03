@@ -9,8 +9,7 @@ input[type="number"] {
 }
 
 table {
-  width: 100%;
-  margin-top: 50px;
+  width: 1500px;
 }
 
 table,
@@ -19,6 +18,18 @@ td {
   border: 2px solid rgba(0, 0, 0, 0.479);
   border-collapse: collapse;
 }
+
+.display-bookkeeping {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+/* .post-container {
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-style: none;
+} */
 
 .delete-button {
   margin-top: 20px;
