@@ -8,6 +8,10 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+.hidden {
+  display: none;
+}
+
 table {
   width: 1000px;
 }
@@ -25,11 +29,15 @@ td {
   flex-direction: row;
 }
 
-/* .post-container {
+.edit .delete {
+  width: 20px;
+}
+
+.post-container {
   border-top-style: none;
   border-right-style: none;
   border-bottom-style: none;
-} */
+}
 
 .delete-button {
   margin-top: 20px;

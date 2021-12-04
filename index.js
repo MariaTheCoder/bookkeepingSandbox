@@ -56,6 +56,11 @@ function createOnePost() {
     return alert("Document number is already used");
   }
 
+  // show table and delete all button and hide default text
+  document.getElementById("post-container").classList.remove("hidden");
+  document.getElementById("delete-button").classList.remove("hidden");
+  document.getElementById("default-text").classList.add("hidden");
+
   // firstly, we want to save and store the input data in the inputData object
   inputData = {
     documentNumber: document.getElementById("document-number").value,
