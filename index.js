@@ -49,6 +49,7 @@ function deleteAllPosts() {
 
 function createOnePost() {
   if (
+    !document.getElementById("document-number").value ||
     !document.getElementById("date").value ||
     !document.getElementById("text").value ||
     !document.getElementById("amount").value ||
@@ -58,11 +59,17 @@ function createOnePost() {
   )
     return alert("Please insert values in all input fields before saving");
 
+  // check if a post exists in the bookkeeping with the same document number, which is not allowed
+  if (repeatedDocNumber(document.getElementById("document-number").value)) {
+    return alert("Document number is already used");
+  }
+
   // firstly, we want to save and store the input data in the inputData object
   inputData = {
+    documentNumber: document.getElementById("document-number").value,
     date: document.getElementById("date").value,
     text: document.getElementById("text").value,
-    amount: document.getElementById("amount").value,
+    amount: Number(document.getElementById("amount").value).toFixed(2),
     currency: document.getElementById("currency").value,
     account: document.getElementById("account").value,
     offsetAccount: document.getElementById("offset-account").value,
@@ -78,6 +85,7 @@ function createOnePost() {
   newPost.className = "post";
 
   // use function down below to create new elements, to set inner text and append children to parent element
+  createAndAppendPostDetails("td", storedData[0].documentNumber, newPost);
   createAndAppendPostDetails("td", storedData[0].date, newPost);
   createAndAppendPostDetails("td", storedData[0].text, newPost);
   createAndAppendPostDetails(
@@ -130,4 +138,13 @@ function sum(accountNumber) {
   });
 
   return sum;
+}
+
+function repeatedDocNumber(docNumberInQuestion) {
+  for (let i = 0; i < storedData.length; i++) {
+    const post = storedData[i];
+
+    if (post.documentNumber === docNumberInQuestion) return true;
+  }
+  return false;
 }
