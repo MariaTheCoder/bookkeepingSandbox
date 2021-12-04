@@ -48,16 +48,8 @@ function deleteAllPosts() {
 }
 
 function createOnePost() {
-  if (
-    !document.getElementById("document-number").value ||
-    !document.getElementById("date").value ||
-    !document.getElementById("text").value ||
-    !document.getElementById("amount").value ||
-    !document.getElementById("currency").value ||
-    !document.getElementById("account").value ||
-    !document.getElementById("offset-account").value
-  )
-    return alert("Please insert values in all input fields before saving");
+  if (!isInputFieldRequiredAndFilledOut())
+    return alert("All input fields need to be filled out");
 
   // check if a post exists in the bookkeeping with the same document number, which is not allowed
   if (repeatedDocNumber(document.getElementById("document-number").value)) {
@@ -147,4 +139,14 @@ function repeatedDocNumber(docNumberInQuestion) {
     if (post.documentNumber === docNumberInQuestion) return true;
   }
   return false;
+}
+
+function isInputFieldRequiredAndFilledOut() {
+  const inputFields = document.getElementsByTagName("input");
+
+  for (let i = 0; i < inputFields.length; i++) {
+    const inputField = inputFields[i];
+    if (!inputField.value && inputField.required) return false;
+  }
+  return true;
 }
