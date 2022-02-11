@@ -1,37 +1,11 @@
 let inputData = {};
 let storedData = [];
-let accountPlan = [
-  {
-    number: 1010,
-    name: "sales of goods",
-    inclVAT: true,
-    currentTotal: 0,
-    type: "income",
-    default: "credit",
-  },
-  {
-    number: 2040,
-    name: "purchase of goods",
-    inclVAT: true,
-    currentTotal: 0,
-    type: "expense",
-    default: "debit",
-  },
-  {
-    number: 6750,
-    name: "bank account",
-    inclVAT: false,
-    currentTotal: 0,
-    type: "liability",
-    default: "debit",
-  },
-];
 
-document.getElementById("save-button").addEventListener("click", createOnePost);
+// document.getElementById("save-button").addEventListener("click", createOnePost);
 
-document
-  .getElementById("delete-button")
-  .addEventListener("click", deleteAllPosts);
+// document
+//   .getElementById("delete-button")
+//   .addEventListener("click", deleteAllPosts);
 
 function editOnePost() {
   //
@@ -158,14 +132,4 @@ function isInputFieldRequiredAndFilledOut() {
     if (!inputField.value && inputField.required) return false;
   }
   return true;
-}
-
-function isCreditDefault(accountInQuestion) {
-  for (let i = 0; i < accountPlan.length; i++) {
-    const account = accountPlan[i];
-
-    if (account.number === accountInQuestion && account.default === "credit")
-      return true;
-  }
-  return false;
 }

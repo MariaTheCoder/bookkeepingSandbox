@@ -1,43 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script defer src="index.js"></script>
-  <link rel="stylesheet" href="style.css">
-  <title>Bookkeeping-demo</title>
-</head>
-<body>
-  <div class="bookkeeping">
-    <div class="input-container">
-      <input class="input" type="number" id="document-number" name="document-number" placeholder="document number" required>
-      <input class="input" type="date" id="date" name="date" required>
-      <input class="input" type="text" id="text" name="text" placeholder="insert text" required>
-      <input class="input" type="number" id="amount" name="amount" placeholder="insert amount" required>
-      <select class="input" name="select-currency" id="currency">
-        <option value="EUR">EUR (€)</option>
-      </select>
-      <input class="input" type="number" id="account" name="account" placeholder="insert account" required>
-      <input class="input" type="number" id="offset-account" name="offset-account" placeholder="insert offset account" required>
-      <button class="buttons" id="save-button">SAVE</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="isCreditDefault.js"></script>
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Bookkeeping-demo</title>
+  </head>
+  <body>
+    <div class="bookkeeping">
+      <div class="input-container">
+        <input
+          class="input"
+          type="number"
+          id="document-number"
+          name="document-number"
+          placeholder="document number"
+          required
+        />
+        <input class="input" type="date" id="date" name="date" required />
+        <input
+          class="input"
+          type="text"
+          id="text"
+          name="text"
+          placeholder="insert text"
+          required
+        />
+        <input
+          class="input"
+          type="number"
+          id="amount"
+          name="amount"
+          placeholder="insert amount"
+          required
+        />
+        <select class="input" name="select-currency" id="currency">
+          <option value="EUR">EUR (€)</option>
+        </select>
+        <input
+          class="input"
+          type="number"
+          id="account"
+          name="account"
+          placeholder="insert account"
+          required
+        />
+        <input
+          class="input"
+          type="number"
+          id="offset-account"
+          name="offset-account"
+          placeholder="insert offset account"
+          required
+        />
+        <button class="buttons" id="save-button">SAVE</button>
+      </div>
+      <div class="display-bookkeeping" id="display-bookkeeping">
+        <p class="default-text hidden" id="default-text">
+          There are no current posts
+        </p>
+        <table class="post-container" id="post-container">
+          <tr>
+            <th>Document#</th>
+            <th>Date</th>
+            <th>Transaction text</th>
+            <th>Transaction amount</th>
+            <th>Currency</th>
+            <th>Account</th>
+            <th>Offset account</th>
+            <th style="visibility: hidden; border: none">Actions</th>
+          </tr>
+        </table>
+      </div>
+      <button class="buttons delete-button hidden" id="delete-button">
+        DELETE ALL POSTS
+      </button>
     </div>
-    <div class="display-bookkeeping" id="display-bookkeeping">
-      <p class="default-text hidden" id="default-text">There are no current posts</p>
-      <table class="post-container" id="post-container">
-        <tr>
-          <th>Document#</th>
-          <th>Date</th>
-          <th>Transaction text</th>
-          <th>Transaction amount</th>
-          <th>Currency</th>
-          <th>Account</th>
-          <th>Offset account</th>
-          <th style="visibility: hidden; border: none">Actions</th>
-        </tr>
-      </table>
-    </div>
-    <button class="buttons delete-button hidden" id="delete-button">DELETE ALL POSTS</button>
-  </div>
-</body>
+  </body>
 </html>
