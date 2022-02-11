@@ -7,6 +7,7 @@ let accountPlan = [
     inclVAT: true,
     currentTotal: 0,
     type: "income",
+    default: "credit",
   },
   {
     number: 2040,
@@ -14,6 +15,7 @@ let accountPlan = [
     inclVAT: true,
     currentTotal: 0,
     type: "expense",
+    default: "debit",
   },
   {
     number: 6750,
@@ -21,6 +23,7 @@ let accountPlan = [
     inclVAT: false,
     currentTotal: 0,
     type: "liability",
+    default: "debit",
   },
 ];
 
@@ -155,4 +158,14 @@ function isInputFieldRequiredAndFilledOut() {
     if (!inputField.value && inputField.required) return false;
   }
   return true;
+}
+
+function isCreditDefault(accountInQuestion) {
+  for (let i = 0; i < accountPlan.length; i++) {
+    const account = accountPlan[i];
+
+    if (account.number === accountInQuestion && account.default === "credit")
+      return true;
+  }
+  return false;
 }
