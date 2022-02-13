@@ -60,27 +60,31 @@ function createOnePost() {
   // print with console.log to ensure that the data looks right
   storedData.unshift(inputData);
 
-  // create a new post in the bookkeeping containing the saved information
-  let newPost = document.createElement("div");
-  newPost.className = "new-post";
+  // create a container for new posts with a fitting id to display in document
+  let postContainer = document.getElementById("createdPosts");
+  postContainer.classList.add("postContainer");
 
   // use function down below to create new elements, to set inner text and append children to parent element
-  createAndAppendPostDetails("div", storedData[0].documentNumber, newPost);
-  createAndAppendPostDetails("div", storedData[0].date, newPost);
-  createAndAppendPostDetails("div", storedData[0].text, newPost);
+  createAndAppendPostDetails(
+    "div",
+    storedData[0].documentNumber,
+    postContainer
+  );
+  createAndAppendPostDetails("div", storedData[0].date, postContainer);
+  createAndAppendPostDetails("div", storedData[0].text, postContainer);
   createAndAppendPostDetails(
     "div",
     Number(storedData[0].amount).toFixed(2),
-    newPost
+    postContainer
   );
-  createAndAppendPostDetails("div", storedData[0].currency, newPost);
-  createAndAppendPostDetails("div", storedData[0].account, newPost);
-  createAndAppendPostDetails("div", storedData[0].offsetAccount, newPost);
-  createActionButtons("edit", newPost);
-  createActionButtons("delete", newPost);
+  createAndAppendPostDetails("div", storedData[0].currency, postContainer);
+  createAndAppendPostDetails("div", storedData[0].account, postContainer);
+  createAndAppendPostDetails("div", storedData[0].offsetAccount, postContainer);
+  createActionButtons("edit", postContainer);
+  createActionButtons("delete", postContainer);
 
   // use insertBefore to append innerText of newPost children to element with id post-container
-  document.getElementById("post-container").appendChild(newPost);
+  document.getElementById("post-container").appendChild(postContainer);
 }
 
 function createActionButtons(action, parent) {
@@ -100,11 +104,11 @@ function createActionButtons(action, parent) {
 }
 
 function createAndAppendPostDetails(tag, innerText, parent) {
-  let element = document.createElement(tag);
-  element.className = "post-detail";
-  element.innerText = innerText;
-  parent.appendChild(element);
-  return element;
+  let post = document.createElement(tag);
+  post.classList.add("post-detail");
+  post.innerText = innerText;
+  parent.appendChild(post);
+  return post;
 }
 
 function repeatedDocNumber(docNumberInQuestion) {

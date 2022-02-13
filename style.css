@@ -27,15 +27,13 @@ input[type="number"] {
 .edit .delete {
   width: 20px;
 }
-/* 
-.post-container {
-} */
 
 .post-detail {
   border: 2px solid rgba(0, 0, 0, 0.479);
   border-collapse: collapse;
 
   background-color: rgba(255, 255, 255, 0);
+  grid-template-columns: inherit;
 }
 
 .delete-button {
