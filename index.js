@@ -61,7 +61,7 @@ function createOnePost() {
   storedData.unshift(inputData);
 
   // create a container for new posts with a fitting id to display in document
-  let postContainer = document.getElementById("createdPosts");
+  let postContainer = document.getElementById("display-bookkeeping");
   postContainer.classList.add("postContainer");
 
   // use function down below to create new elements, to set inner text and append children to parent element
