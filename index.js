@@ -1,11 +1,8 @@
-let inputData = {};
-let storedData = [];
+document.getElementById("save-button").addEventListener("click", createOnePost);
 
-// document.getElementById("save-button").addEventListener("click", createOnePost);
-
-// document
-//   .getElementById("delete-button")
-//   .addEventListener("click", deleteAllPosts);
+document
+  .getElementById("delete-button")
+  .addEventListener("click", deleteAllPosts);
 
 function editOnePost() {
   //
@@ -25,6 +22,9 @@ function deleteAllPosts() {
 }
 
 function createOnePost() {
+  let storedData = [];
+  let inputData = {};
+
   if (!isInputFieldRequiredAndFilledOut())
     return alert("All input fields need to be filled out");
 
@@ -34,9 +34,13 @@ function createOnePost() {
   }
 
   // show table and delete all button and hide default text
-  document.getElementById("post-container").classList.remove("hidden");
-  document.getElementById("delete-button").classList.remove("hidden");
   document.getElementById("default-text").classList.add("hidden");
+  let postHeaders = document.getElementsByClassName("post-detail");
+  postHeaders.forEach((postHeader) => {
+    postHeader.style.visibility = "";
+  }); // not working fix it
+  const collection = document.getElementsByClassName("post");
+  document.getElementById("delete-button").classList.remove("hidden");
 
   // firstly, we want to save and store the input data in the inputData object
   inputData = {
@@ -55,21 +59,21 @@ function createOnePost() {
   storedData.unshift(inputData);
 
   // create a new post in the bookkeeping containing the saved information
-  let newPost = document.createElement("tr");
-  newPost.className = "post";
+  let newPost = document.createElement("div");
+  newPost.className = "new-post";
 
   // use function down below to create new elements, to set inner text and append children to parent element
-  createAndAppendPostDetails("td", storedData[0].documentNumber, newPost);
-  createAndAppendPostDetails("td", storedData[0].date, newPost);
-  createAndAppendPostDetails("td", storedData[0].text, newPost);
+  createAndAppendPostDetails("div", storedData[0].documentNumber, newPost);
+  createAndAppendPostDetails("div", storedData[0].date, newPost);
+  createAndAppendPostDetails("div", storedData[0].text, newPost);
   createAndAppendPostDetails(
-    "td",
+    "div",
     Number(storedData[0].amount).toFixed(2),
     newPost
   );
-  createAndAppendPostDetails("td", storedData[0].currency, newPost);
-  createAndAppendPostDetails("td", storedData[0].account, newPost);
-  createAndAppendPostDetails("td", storedData[0].offsetAccount, newPost);
+  createAndAppendPostDetails("div", storedData[0].currency, newPost);
+  createAndAppendPostDetails("div", storedData[0].account, newPost);
+  createAndAppendPostDetails("div", storedData[0].offsetAccount, newPost);
   createActionButtons("edit", newPost);
   createActionButtons("delete", newPost);
 
@@ -102,6 +106,7 @@ function createAndAppendPostDetails(tag, innerText, parent) {
 }
 
 function sum(accountNumber) {
+  let storedData = [];
   let sum = 0;
 
   storedData.forEach((element) => {
@@ -115,6 +120,8 @@ function sum(accountNumber) {
 }
 
 function repeatedDocNumber(docNumberInQuestion) {
+  let storedData = [];
+
   for (let i = 0; i < storedData.length; i++) {
     const post = storedData[i];
 
@@ -133,3 +140,5 @@ function isInputFieldRequiredAndFilledOut() {
   }
   return true;
 }
+
+function toggleVisibility(class_name) {}

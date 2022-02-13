@@ -9,34 +9,33 @@ input[type="number"] {
 }
 
 .hidden {
-  display: none;
-}
-
-table {
-  width: 1000px;
-}
-
-table,
-th,
-td {
-  border: 2px solid rgba(0, 0, 0, 0.479);
-  border-collapse: collapse;
+  /* display: none; */
+  visibility: hidden;
 }
 
 .display-bookkeeping {
+  display: grid;
+  grid-template-columns: repeat(7, 150px) repeat(1, 50px);
   margin-top: 50px;
-  display: flex;
-  flex-direction: row;
+}
+
+.default-text {
+  grid-column-start: 1;
+  grid-column-end: 9;
 }
 
 .edit .delete {
   width: 20px;
 }
-
+/* 
 .post-container {
-  border-top-style: none;
-  border-right-style: none;
-  border-bottom-style: none;
+} */
+
+.post-detail {
+  border: 2px solid rgba(0, 0, 0, 0.479);
+  border-collapse: collapse;
+
+  background-color: rgba(255, 255, 255, 0);
 }
 
 .delete-button {
