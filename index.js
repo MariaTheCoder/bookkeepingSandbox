@@ -1,3 +1,5 @@
+let storedData = [];
+
 document.getElementById("save-button").addEventListener("click", createOnePost);
 
 document
@@ -22,7 +24,6 @@ function deleteAllPosts() {
 }
 
 function createOnePost() {
-  let storedData = [];
   let inputData = {};
 
   if (!isInputFieldRequiredAndFilledOut())
@@ -34,13 +35,14 @@ function createOnePost() {
   }
 
   // show table and delete all button and hide default text
-  document.getElementById("default-text").classList.add("hidden");
-  let postHeaders = document.getElementsByClassName("post-detail");
-  postHeaders.forEach((postHeader) => {
-    postHeader.style.visibility = "";
-  }); // not working fix it
-  const collection = document.getElementsByClassName("post");
   document.getElementById("delete-button").classList.remove("hidden");
+  document.getElementById("default-text").classList.add("hidden");
+
+  // remove hidden class from all elements in the post-detail class
+  const postDetails = document.getElementsByClassName("post-detail");
+  for (let i = 0; i < postDetails.length; i++) {
+    postDetails[i].classList.remove("hidden");
+  }
 
   // firstly, we want to save and store the input data in the inputData object
   inputData = {
@@ -105,20 +107,6 @@ function createAndAppendPostDetails(tag, innerText, parent) {
   return element;
 }
 
-function sum(accountNumber) {
-  let storedData = [];
-  let sum = 0;
-
-  storedData.forEach((element) => {
-    if (Number(element.account) === accountNumber)
-      sum += Number(element.amount);
-    if (Number(element.offsetAccount) === accountNumber)
-      sum -= Number(element.amount);
-  });
-
-  return sum;
-}
-
 function repeatedDocNumber(docNumberInQuestion) {
   let storedData = [];
 
@@ -140,5 +128,3 @@ function isInputFieldRequiredAndFilledOut() {
   }
   return true;
 }
-
-function toggleVisibility(class_name) {}
