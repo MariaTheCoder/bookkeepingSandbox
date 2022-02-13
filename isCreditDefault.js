@@ -34,6 +34,6 @@ function isCreditDefault(accountInQuestion) {
   return false;
 }
 
-console.log(isCreditDefault(1010));
-console.log(isCreditDefault(2040));
-console.log(isCreditDefault(6750));
+// console.log(isCreditDefault(1010));
+// console.log(isCreditDefault(2040));
+// console.log(isCreditDefault(6750));

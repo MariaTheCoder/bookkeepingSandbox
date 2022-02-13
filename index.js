@@ -84,7 +84,6 @@ function createOnePost() {
   createActionButtons("delete", postContainer);
 
   // use insertBefore to append innerText of newPost children to element with id post-container
-  document.getElementById("post-container").appendChild(postContainer);
 }
 
 function createActionButtons(action, parent) {
@@ -112,8 +111,6 @@ function createAndAppendPostDetails(tag, innerText, parent) {
 }
 
 function repeatedDocNumber(docNumberInQuestion) {
-  let storedData = [];
-
   for (let i = 0; i < storedData.length; i++) {
     const post = storedData[i];
 
