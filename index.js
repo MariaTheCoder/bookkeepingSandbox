@@ -57,7 +57,7 @@ function createOnePost() {
     delete: false,
   };
 
-  // print with console.log to ensure that the data looks right
+  // insert new data as the first element in storedData array
   storedData.unshift(inputData);
 
   // create a container for new posts with a fitting id to display in document
@@ -82,8 +82,6 @@ function createOnePost() {
   createAndAppendPostDetails("div", storedData[0].offsetAccount, postContainer);
   createActionButtons("edit", postContainer);
   createActionButtons("delete", postContainer);
-
-  // use insertBefore to append innerText of newPost children to element with id post-container
 }
 
 function createActionButtons(action, parent) {
@@ -97,7 +95,7 @@ function createActionButtons(action, parent) {
     newAction.innerText = "❌";
   }
 
-  newAction.className = action + " post-detail";
+  newAction.className = `${action} post-detail`;
   parent.appendChild(newAction);
   return newAction;
 }
