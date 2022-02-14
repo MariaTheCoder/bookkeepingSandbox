@@ -1,4 +1,4 @@
-let storedData = [];
+const storedData = [];
 
 document.getElementById("save-button").addEventListener("click", createOnePost);
 
@@ -7,11 +7,11 @@ document
   .addEventListener("click", deleteAllPosts);
 
 function editOnePost() {
-  //
+  console.log("edit command clicked!");
 }
 
 function deleteOnePost() {
-  //
+  console.log("delete command clicked!");
 }
 
 function deleteAllPosts() {
@@ -89,13 +89,20 @@ function createActionButtons(action, parent) {
 
   if (action === "edit") {
     newAction.innerText = "🖉";
+    newAction.addEventListener("click", () => {
+      console.log("clicked edit");
+    });
   }
 
   if (action === "delete") {
     newAction.innerText = "❌";
+    newAction.addEventListener("click", () => {
+      console.log("clicked close");
+    });
   }
 
-  newAction.className = `${action} post-detail`;
+  newAction.className = action + " post-detail";
+  newAction.id = action;
   parent.appendChild(newAction);
   return newAction;
 }
