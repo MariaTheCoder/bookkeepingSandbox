@@ -24,8 +24,9 @@ input[type="number"] {
   grid-column-end: 10;
 }
 
-.edit .delete {
-  width: 20px;
+.edit,
+.delete {
+  cursor: pointer;
 }
 
 .post-detail {
