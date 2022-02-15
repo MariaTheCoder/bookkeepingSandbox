@@ -1,18 +1,10 @@
-const storedData = [];
+let storedData = [];
 
 document.getElementById("save-button").addEventListener("click", createOnePost);
 
 document
   .getElementById("delete-button")
   .addEventListener("click", deleteAllPosts);
-
-function editOnePost() {
-  console.log("edit command clicked!");
-}
-
-function deleteOnePost() {
-  console.log("delete command clicked!");
-}
 
 function deleteAllPosts() {
   storedData = [];
@@ -54,37 +46,38 @@ function createOnePost() {
     account: document.getElementById("account").value,
     offsetAccount: document.getElementById("offset-account").value,
     edit: false,
-    delete: false,
   };
 
   // insert new data as the first element in storedData array
-  storedData.unshift(inputData);
+  storedData.push(inputData);
 
   // create a container for new posts with a fitting id to display in document
   let postContainer = document.getElementById("display-bookkeeping");
   postContainer.classList.add("postContainer");
 
+  const lastAddedPost = storedData[storedData.length - 1];
+
   // use function down below to create new elements, to set inner text and append children to parent element
   createAndAppendPostDetails(
     "div",
-    storedData[0].documentNumber,
+    lastAddedPost.documentNumber,
     postContainer
   );
-  createAndAppendPostDetails("div", storedData[0].date, postContainer);
-  createAndAppendPostDetails("div", storedData[0].text, postContainer);
+  createAndAppendPostDetails("div", lastAddedPost.date, postContainer);
+  createAndAppendPostDetails("div", lastAddedPost.text, postContainer);
   createAndAppendPostDetails(
     "div",
-    Number(storedData[0].amount).toFixed(2),
+    Number(lastAddedPost.amount).toFixed(2),
     postContainer
   );
-  createAndAppendPostDetails("div", storedData[0].currency, postContainer);
-  createAndAppendPostDetails("div", storedData[0].account, postContainer);
-  createAndAppendPostDetails("div", storedData[0].offsetAccount, postContainer);
+  createAndAppendPostDetails("div", lastAddedPost.currency, postContainer);
+  createAndAppendPostDetails("div", lastAddedPost.account, postContainer);
+  createAndAppendPostDetails("div", lastAddedPost.offsetAccount, postContainer);
   createActionButtons("edit", postContainer);
-  createActionButtons("delete", postContainer);
+  createActionButtons("delete", postContainer, inputData);
 }
 
-function createActionButtons(action, parent) {
+function createActionButtons(action, parent, dataObject) {
   let newAction = document.createElement("span");
 
   if (action === "edit") {
@@ -97,7 +90,9 @@ function createActionButtons(action, parent) {
   if (action === "delete") {
     newAction.innerText = "❌";
     newAction.addEventListener("click", () => {
-      console.log("clicked close");
+      storedData = storedData.filter(
+        (post) => post.documentNumber !== dataObject.documentNumber
+      );
     });
   }
 
