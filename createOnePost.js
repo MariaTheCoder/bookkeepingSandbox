@@ -44,18 +44,45 @@ function createOnePost() {
   createAndAppendPostDetails(
     "div",
     lastAddedPost.documentNumber,
-    postContainer
+    postContainer,
+    inputData.documentNumber
   );
-  createAndAppendPostDetails("div", lastAddedPost.date, postContainer);
-  createAndAppendPostDetails("div", lastAddedPost.text, postContainer);
+  createAndAppendPostDetails(
+    "div",
+    lastAddedPost.date,
+    postContainer,
+    inputData.documentNumber
+  );
+  createAndAppendPostDetails(
+    "div",
+    lastAddedPost.text,
+    postContainer,
+    inputData.documentNumber
+  );
   createAndAppendPostDetails(
     "div",
     Number(lastAddedPost.amount).toFixed(2),
-    postContainer
+    postContainer,
+    inputData.documentNumber
   );
-  createAndAppendPostDetails("div", lastAddedPost.currency, postContainer);
-  createAndAppendPostDetails("div", lastAddedPost.account, postContainer);
-  createAndAppendPostDetails("div", lastAddedPost.offsetAccount, postContainer);
-  createActionButtons("edit", postContainer);
+  createAndAppendPostDetails(
+    "div",
+    lastAddedPost.currency,
+    postContainer,
+    inputData.documentNumber
+  );
+  createAndAppendPostDetails(
+    "div",
+    lastAddedPost.account,
+    postContainer,
+    inputData.documentNumber
+  );
+  createAndAppendPostDetails(
+    "div",
+    lastAddedPost.offsetAccount,
+    postContainer,
+    inputData.documentNumber
+  );
+  createActionButtons("edit", postContainer, inputData);
   createActionButtons("delete", postContainer, inputData);
 }

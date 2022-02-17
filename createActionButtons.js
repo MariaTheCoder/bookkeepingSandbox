@@ -3,6 +3,7 @@ function createActionButtons(action, parent, dataObject) {
 
   if (action === "edit") {
     newAction.innerText = "🖉";
+    newAction.setAttribute("data-rowNumber", dataObject.documentNumber);
     newAction.addEventListener("click", () => {
       console.log("clicked edit");
     });
@@ -10,10 +11,12 @@ function createActionButtons(action, parent, dataObject) {
 
   if (action === "delete") {
     newAction.innerText = "❌";
+    newAction.setAttribute("data-rowNumber", dataObject.documentNumber);
     newAction.addEventListener("click", () => {
       storedData = storedData.filter(
         (post) => post.documentNumber !== dataObject.documentNumber
       );
+      console.log("post deleted");
     });
   }
 
