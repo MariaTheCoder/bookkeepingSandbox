@@ -1,21 +1,25 @@
 function createActionButtons(action, parent, dataObject) {
   let newAction = document.createElement("span");
+  const id = dataObject.documentNumber;
 
   if (action === "edit") {
     newAction.innerText = "🖉";
-    newAction.setAttribute("data-rowNumber", dataObject.documentNumber);
+    newAction.setAttribute("data-rownumber", id);
     newAction.addEventListener("click", () => {
-      console.log("clicked edit");
+      // const posts = document.getElementsByClassName("post-detail");
+      const posts = document.querySelectorAll(`[data-rownumber*="${id}"]`);
+
+      for (let i = 0; i < posts.length; i++) {
+        posts[i].remove();
+      }
     });
   }
 
   if (action === "delete") {
     newAction.innerText = "❌";
-    newAction.setAttribute("data-rowNumber", dataObject.documentNumber);
+    newAction.setAttribute("data-rownumber", id);
     newAction.addEventListener("click", () => {
-      storedData = storedData.filter(
-        (post) => post.documentNumber !== dataObject.documentNumber
-      );
+      storedData = storedData.filter((post) => post.documentNumber !== id);
       console.log("post deleted");
     });
   }
