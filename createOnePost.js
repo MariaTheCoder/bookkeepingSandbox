@@ -32,7 +32,7 @@ function createOnePost() {
   };
 
   // insert new data as the first element in storedData array
-  storedData.push(inputData);
+  postNewPost2DB(inputData);
 
   // create a container for new posts with a fitting id to display in document
   let postContainer = document.getElementById("display-bookkeeping");
