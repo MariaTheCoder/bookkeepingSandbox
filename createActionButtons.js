@@ -19,8 +19,7 @@ function createActionButtons(action, parent, dataObject) {
     newAction.innerText = "❌";
     newAction.setAttribute("data-rownumber", id);
     newAction.addEventListener("click", () => {
-      storedData = storedData.filter((post) => post.documentNumber !== id);
-      console.log("post deleted");
+      removeDataObjectFromDB(dataObject.documentNumber);
     });
   }
 
