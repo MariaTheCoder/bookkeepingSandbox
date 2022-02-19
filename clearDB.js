@@ -1,0 +1,5 @@
+function clearDB() {
+  storedData = [];
+
+  renderPostsFromDB();
+}
