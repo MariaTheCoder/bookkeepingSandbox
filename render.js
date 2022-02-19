@@ -1,4 +1,4 @@
-function renderPostsFromDB() {
+function render() {
   deleteAllPosts();
 
   // create a container for new posts with a fitting id to display in document

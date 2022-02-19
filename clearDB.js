@@ -1,5 +1,5 @@
 function clearDB() {
   storedData = [];
 
-  renderPostsFromDB();
+  render();
 }
