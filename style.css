@@ -44,3 +44,7 @@ input[type="number"] {
 .delete-button {
   margin-top: 20px;
 }
+
+.selected {
+  background-color: aqua;
+}

@@ -59,43 +59,50 @@ function render() {
         "div",
         dataObject.documentNumber,
         postContainer,
-        dataObject.documentNumber
+        dataObject.documentNumber,
+        dataObject.selected
       );
       createAndAppendPostDetails(
         "div",
         dataObject.date,
         postContainer,
-        dataObject.documentNumber
+        dataObject.documentNumber,
+        dataObject.selected
       );
       createAndAppendPostDetails(
         "div",
         dataObject.text,
         postContainer,
-        dataObject.documentNumber
+        dataObject.documentNumber,
+        dataObject.selected
       );
       createAndAppendPostDetails(
         "div",
         Number(dataObject.amount).toFixed(2),
         postContainer,
-        dataObject.documentNumber
+        dataObject.documentNumber,
+        dataObject.selected
       );
       createAndAppendPostDetails(
         "div",
         dataObject.currency,
         postContainer,
-        dataObject.documentNumber
+        dataObject.documentNumber,
+        dataObject.selected
       );
       createAndAppendPostDetails(
         "div",
         dataObject.account,
         postContainer,
-        dataObject.documentNumber
+        dataObject.documentNumber,
+        dataObject.selected
       );
       createAndAppendPostDetails(
         "div",
         dataObject.offsetAccount,
         postContainer,
-        dataObject.documentNumber
+        dataObject.documentNumber,
+        dataObject.selected
       );
       createActionButtons("edit", postContainer, dataObject);
       createActionButtons("delete", postContainer, dataObject);
