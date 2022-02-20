@@ -28,7 +28,7 @@ function createOnePost() {
     currency: document.getElementById("currency").value,
     account: document.getElementById("account").value,
     offsetAccount: document.getElementById("offset-account").value,
-    edit: false,
+    editable: false,
   };
 
   // insert new data as the first element in storedData array
