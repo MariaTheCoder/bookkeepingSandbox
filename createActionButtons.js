@@ -3,7 +3,7 @@ function createActionButtons(action, parent, dataObject) {
   const documentNumber = dataObject.documentNumber;
 
   if (action === "edit") {
-    newAction.innerText = "🖉";
+    newAction.innerText = "✏️";
     newAction.setAttribute("data-rownumber", documentNumber);
     newAction.addEventListener("click", () => {
       editPost(documentNumber);
