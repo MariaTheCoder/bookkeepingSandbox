@@ -29,8 +29,12 @@ input[type="number"] {
 }
 
 .edit,
-.delete {
+.delete,
+.save {
   cursor: pointer;
+  text-align: center;
+  /* hide grid lines for icons */
+  border: transparent !important;
 }
 
 .post-detail {
