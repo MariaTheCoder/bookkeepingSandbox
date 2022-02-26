@@ -1,7 +1,9 @@
 let storedData = [];
 
-const saveButton = document.getElementById("save-button");
-const deleteButton = document.getElementById("delete-button");
+const createNewPostButton = document.getElementById("create-new-post");
+const deleteAllPostsButton = document.getElementById("delete-all-posts");
 
-if (saveButton) saveButton.addEventListener("click", createOnePost);
-if (deleteButton) deleteButton.addEventListener("click", clearDB);
+if (createNewPostButton)
+  createNewPostButton.addEventListener("click", createOnePost);
+if (deleteAllPostsButton)
+  deleteAllPostsButton.addEventListener("click", clearDB);

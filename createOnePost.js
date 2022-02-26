@@ -10,14 +10,18 @@ function createOnePost() {
   }
 
   // show table and delete all button and hide default text
-  document.getElementById("delete-button").classList.remove("hidden");
+  document.getElementById("delete-all-posts").classList.remove("hidden");
   document.getElementById("default-text").classList.add("hidden");
 
   // remove hidden class from all elements in the post-detail class
-  const postDetails = document.getElementsByClassName("post-detail");
-  for (let i = 0; i < postDetails.length; i++) {
-    postDetails[i].classList.remove("hidden");
-  }
+  const postDetails = document.querySelectorAll(".post-detail");
+  postDetails.forEach((element) => {
+    element.classList.remove("hidden");
+    console.log(element);
+  });
+  // for (let i = 0; i < postDetails.length; i++) {
+  //   postDetails[i].classList.remove("hidden");
+  // }
 
   // firstly, we want to save and store the input data in the inputData object
   inputData = {
