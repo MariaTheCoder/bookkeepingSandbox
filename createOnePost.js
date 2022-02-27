@@ -9,20 +9,6 @@ function createOnePost() {
     return alert("Document number is already used");
   }
 
-  // show table and delete all button and hide default text
-  document.getElementById("delete-all-posts").classList.remove("hidden");
-  document.getElementById("default-text").classList.add("hidden");
-
-  // remove hidden class from all elements in the post-detail class
-  const postDetails = document.querySelectorAll(".post-detail");
-  postDetails.forEach((element) => {
-    element.classList.remove("hidden");
-    console.log(element);
-  });
-  // for (let i = 0; i < postDetails.length; i++) {
-  //   postDetails[i].classList.remove("hidden");
-  // }
-
   // firstly, we want to save and store the input data in the inputData object
   inputData = {
     documentNumber: document.getElementById("document-number").value,

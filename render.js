@@ -5,6 +5,26 @@ function render() {
   let postContainer = document.getElementById("display-bookkeeping");
   postContainer.classList.add("postContainer");
 
+  if (storedData.length === 0) {
+    document.getElementById("delete-all-posts").classList.add("hidden");
+    document.getElementById("default-text").classList.remove("hidden");
+
+    const postHeaders = document.querySelectorAll(".post-headers");
+    postHeaders.forEach((element) => {
+      element.classList.add("hidden");
+    });
+  } else {
+    // show table and delete all button and hide default text
+    document.getElementById("delete-all-posts").classList.remove("hidden");
+    document.getElementById("default-text").classList.add("hidden");
+
+    // remove hidden class from all elements in the post-detail class
+    const postHeaders = document.querySelectorAll(".post-headers");
+    postHeaders.forEach((element) => {
+      element.classList.remove("hidden");
+    });
+  }
+
   for (let i = 0; i < storedData.length; i++) {
     const dataObject = storedData[i];
 

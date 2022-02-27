@@ -28,6 +28,7 @@ input[type="number"] {
   grid-column-end: 10;
 }
 
+.action,
 .edit,
 .delete,
 .save {
@@ -37,7 +38,8 @@ input[type="number"] {
   border: transparent !important;
 }
 
-.post-detail {
+.post-detail,
+.post-headers {
   border: 2px solid rgba(0, 0, 0, 0.479);
   border-collapse: collapse;
 
