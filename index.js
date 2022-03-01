@@ -7,8 +7,8 @@ const deleteAllPostsButton = document.getElementById("delete-all-posts");
 if (inputAccount)
   inputAccount.addEventListener("keyup", () => {
     isCreditDefault(Number(inputAccount.value))
-      ? (document.getElementById("credit-debit").selectedIndex = "1")
-      : (document.getElementById("credit-debit").selectedIndex = "0");
+      ? (document.getElementById("debitCredit").selectedIndex = "1")
+      : (document.getElementById("debitCredit").selectedIndex = "0");
   });
 
 if (createNewPostButton)
