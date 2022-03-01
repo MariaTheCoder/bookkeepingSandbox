@@ -54,7 +54,7 @@ function render() {
         dataObject.documentNumber
       );
       createAndAppendPostDetails(
-        "input",
+        "select",
         dataObject.debitCredit,
         postContainer,
         dataObject.documentNumber
@@ -66,7 +66,7 @@ function render() {
         dataObject.documentNumber
       );
       createAndAppendPostDetails(
-        "input",
+        "select",
         dataObject.currency,
         postContainer,
         dataObject.documentNumber
