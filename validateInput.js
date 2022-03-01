@@ -1,4 +1,4 @@
-function createOnePost() {
+function validateInput() {
   let inputData = {};
 
   if (!isInputFieldRequiredAndFilledOut())
