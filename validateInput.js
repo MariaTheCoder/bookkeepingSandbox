@@ -14,9 +14,9 @@ function validateInput() {
     documentNumber: document.getElementById("document-number").value,
     date: document.getElementById("date").value,
     text: document.getElementById("text").value,
+    account: document.getElementById("account").value,
     amount: Number(document.getElementById("amount").value).toFixed(2),
     currency: document.getElementById("currency").value,
-    account: document.getElementById("account").value,
     offsetAccount: document.getElementById("offset-account").value,
     editable: false,
   };

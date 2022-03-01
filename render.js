@@ -49,6 +49,12 @@ function render() {
       );
       createAndAppendPostDetails(
         "input",
+        dataObject.account,
+        postContainer,
+        dataObject.documentNumber
+      );
+      createAndAppendPostDetails(
+        "input",
         Number(dataObject.amount).toFixed(2),
         postContainer,
         dataObject.documentNumber
@@ -56,12 +62,6 @@ function render() {
       createAndAppendPostDetails(
         "input",
         dataObject.currency,
-        postContainer,
-        dataObject.documentNumber
-      );
-      createAndAppendPostDetails(
-        "input",
-        dataObject.account,
         postContainer,
         dataObject.documentNumber
       );
@@ -98,6 +98,13 @@ function render() {
       );
       createAndAppendPostDetails(
         "div",
+        dataObject.account,
+        postContainer,
+        dataObject.documentNumber,
+        dataObject.selected
+      );
+      createAndAppendPostDetails(
+        "div",
         Number(dataObject.amount).toFixed(2),
         postContainer,
         dataObject.documentNumber,
@@ -106,13 +113,6 @@ function render() {
       createAndAppendPostDetails(
         "div",
         dataObject.currency,
-        postContainer,
-        dataObject.documentNumber,
-        dataObject.selected
-      );
-      createAndAppendPostDetails(
-        "div",
-        dataObject.account,
         postContainer,
         dataObject.documentNumber,
         dataObject.selected
