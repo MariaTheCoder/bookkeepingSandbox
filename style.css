@@ -19,7 +19,7 @@ input[type="number"] {
 
 .display-bookkeeping {
   display: grid;
-  grid-template-columns: repeat(7, 150px) repeat(2, 35px);
+  grid-template-columns: repeat(8, 150px) repeat(2, 35px);
   margin-top: 50px;
 }
 

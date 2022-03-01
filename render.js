@@ -55,6 +55,12 @@ function render() {
       );
       createAndAppendPostDetails(
         "input",
+        dataObject.debitCredit,
+        postContainer,
+        dataObject.documentNumber
+      );
+      createAndAppendPostDetails(
+        "input",
         Number(dataObject.amount).toFixed(2),
         postContainer,
         dataObject.documentNumber
@@ -102,6 +108,12 @@ function render() {
         postContainer,
         dataObject.documentNumber,
         dataObject.selected
+      );
+      createAndAppendPostDetails(
+        "div",
+        dataObject.debitCredit,
+        postContainer,
+        dataObject.documentNumber
       );
       createAndAppendPostDetails(
         "div",

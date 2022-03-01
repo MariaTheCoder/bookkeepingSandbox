@@ -15,6 +15,7 @@ function validateInput() {
     date: document.getElementById("date").value,
     text: document.getElementById("text").value,
     account: document.getElementById("account").value,
+    debitCredit: document.getElementById("credit-debit").value,
     amount: Number(document.getElementById("amount").value).toFixed(2),
     currency: document.getElementById("currency").value,
     offsetAccount: document.getElementById("offset-account").value,
