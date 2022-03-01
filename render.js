@@ -113,7 +113,8 @@ function render() {
         "div",
         dataObject.debitCredit,
         postContainer,
-        dataObject.documentNumber
+        dataObject.documentNumber,
+        dataObject.selected
       );
       createAndAppendPostDetails(
         "div",

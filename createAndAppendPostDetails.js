@@ -2,7 +2,7 @@ function createAndAppendPostDetails(
   tag,
   innerText,
   parent,
-  id,
+  documentNumber,
   selected = false
 ) {
   let post = document.createElement(tag);
@@ -13,7 +13,7 @@ function createAndAppendPostDetails(
     post.addEventListener("click", () => {
       storedData.forEach((element) => (element.selected = false));
 
-      const found = storedData.find((p) => p.documentNumber === id);
+      const found = storedData.find((p) => p.documentNumber === documentNumber);
 
       if (found) {
         found.selected = true;
@@ -29,7 +29,7 @@ function createAndAppendPostDetails(
     post.value = innerText;
   }
 
-  post.setAttribute("data-rownumber", id);
+  post.setAttribute("data-rownumber", documentNumber);
   parent.appendChild(post);
 
   return post;

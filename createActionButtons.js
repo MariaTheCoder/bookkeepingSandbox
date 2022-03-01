@@ -21,17 +21,9 @@ function createActionButtons(action, parent, dataObject) {
   if (action === "save") {
     newAction.innerText = "💾";
     newAction.setAttribute("data-rownumber", documentNumber);
-    newAction.addEventListener("click", () => {
-      const found = storedData.find(
-        (post) => post.documentNumber === documentNumber
-      );
-
-      if (found) {
-        found.editable = false;
-      }
-
-      render();
-    });
+    newAction.addEventListener("click", () =>
+      savePost(dataObject.documentNumber)
+    );
   }
 
   newAction.className = action + " post-detail";
