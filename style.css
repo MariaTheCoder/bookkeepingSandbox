@@ -38,6 +38,10 @@ input[type="number"] {
   border: transparent !important;
 }
 
+.post-headers {
+  font-weight: bold;
+}
+
 .post-detail,
 .post-headers {
   border: 2px solid rgba(0, 0, 0, 0.479);
