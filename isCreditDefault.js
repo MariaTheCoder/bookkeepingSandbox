@@ -1,4 +1,4 @@
-let accountPlan = [
+const accountPlan = [
   {
     number: 1010,
     name: "sales of goods",
@@ -25,11 +25,10 @@ let accountPlan = [
   },
 ];
 
-function isCreditDefault(accountInQuestion) {
-  for (let i = 0; i < accountPlan.length; i++) {
-    const account = accountPlan[i];
-    if (account.number === accountInQuestion && account.default === "credit")
-      return true;
-  }
-  return false;
-}
+/**
+ * Uses optional chaining operator to check whether account number exists and its default is "credit".
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+ * @param {number} accountNumber
+ */
+const isCreditDefault = (accountNumber) =>
+  !!(accountPlan.find((a) => a.number === accountNumber)?.default === "credit"); // ?. can return undefined, we use !! to ensure return value is boolean

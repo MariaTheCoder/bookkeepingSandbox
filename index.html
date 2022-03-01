@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="isCreditDefault.js"></script>
     <script defer src="isInputFieldRequiredAndFilledOut.js"></script>
     <script defer src="repeatedDocNumber.js"></script>
     <script defer src="clearDB.js"></script>
@@ -16,7 +17,6 @@
     <script defer src="removeDataObjectFromDB.js"></script>
     <script defer src="createActionButtons.js"></script>
     <script defer src="validateInput.js"></script>
-    <script defer src="isCreditDefault.js"></script>
     <script defer src="index.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Bookkeeping-demo</title>
@@ -53,6 +53,19 @@
         <input
           class="input"
           type="number"
+          id="account"
+          name="account"
+          placeholder="insert account"
+          value="1010"
+          required
+        />
+        <select class="input" name="select-credit-debit" id="credit-debit">
+          <option value="debit">debit</option>
+          <option value="credit">credit</option>
+        </select>
+        <input
+          class="input"
+          type="number"
           id="amount"
           name="amount"
           placeholder="insert amount"
@@ -62,15 +75,6 @@
         <select class="input" name="select-currency" id="currency">
           <option value="EUR">EUR (€)</option>
         </select>
-        <input
-          class="input"
-          type="number"
-          id="account"
-          name="account"
-          placeholder="insert account"
-          value="1010"
-          required
-        />
         <input
           class="input"
           type="number"
@@ -89,6 +93,7 @@
       <div class="post-headers hidden">Date</div>
       <div class="post-headers hidden">Transaction text</div>
       <div class="post-headers hidden">Account</div>
+      <div class="post-headers hidden">Credit/debit</div>
       <div class="post-headers hidden">Transaction amount</div>
       <div class="post-headers hidden">Currency</div>
       <div class="post-headers hidden">Offset account</div>
