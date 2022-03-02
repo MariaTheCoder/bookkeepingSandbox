@@ -1,8 +1,6 @@
-function isInputFieldRequiredAndFilledOut() {
-  const inputFields = document.getElementsByTagName("input");
-
-  for (let i = 0; i < inputFields.length; i++) {
-    const inputField = inputFields[i];
+function isInputFieldRequiredAndFilledOut(HTMLCollection) {
+  for (let i = 0; i < HTMLCollection.length; i++) {
+    const inputField = HTMLCollection[i];
     if (!inputField.value && inputField.required) return false;
   }
   return true;
