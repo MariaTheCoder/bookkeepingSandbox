@@ -1,7 +1,9 @@
 function validateInput() {
   let inputData = {};
 
-  if (!isInputFieldRequiredAndFilledOut())
+  const inputFields = document.getElementsByTagName("input");
+
+  if (!isInputFieldRequiredAndFilledOut(inputFields))
     return alert("All input fields need to be filled out");
 
   // check if a post exists in the bookkeeping with the same document number, which is not allowed
