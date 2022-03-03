@@ -32,33 +32,32 @@ function render() {
       for (const property in dataObject) {
         if (Object.hasOwnProperty.call(dataObject, property)) {
           const value = dataObject[property];
+          if (property === "editable") continue;
 
-          if (property !== "editable") {
-            if (property === "amount") {
-              createAndAppendPostDetails(
-                "input",
-                Number(value).toFixed(2),
-                property,
-                postContainer,
-                dataObject.documentNumber
-              );
-            } else if (property === "currency" || property === "debitCredit") {
-              createAndAppendPostDetails(
-                "select",
-                value,
-                property,
-                postContainer,
-                dataObject.documentNumber
-              );
-            } else {
-              createAndAppendPostDetails(
-                "input",
-                value,
-                property,
-                postContainer,
-                dataObject.documentNumber
-              );
-            }
+          if (property === "amount") {
+            createAndAppendPostDetails(
+              "input",
+              Number(value).toFixed(2),
+              property,
+              postContainer,
+              dataObject.documentNumber
+            );
+          } else if (property === "currency" || property === "debitCredit") {
+            createAndAppendPostDetails(
+              "select",
+              value,
+              property,
+              postContainer,
+              dataObject.documentNumber
+            );
+          } else {
+            createAndAppendPostDetails(
+              "input",
+              value,
+              property,
+              postContainer,
+              dataObject.documentNumber
+            );
           }
         }
       }
