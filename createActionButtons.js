@@ -22,7 +22,7 @@ function createActionButtons(action, parent, dataObject) {
     newAction.innerText = "💾";
     newAction.setAttribute("data-rownumber", documentNumber);
     newAction.addEventListener("click", () =>
-      savePost(dataObject.documentNumber)
+      validateEdit(dataObject.documentNumber)
     );
   }
 
