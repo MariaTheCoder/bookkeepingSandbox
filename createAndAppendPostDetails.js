@@ -1,6 +1,7 @@
 function createAndAppendPostDetails(
   tag,
   innerText,
+  column,
   parent,
   documentNumber,
   selected = false
@@ -66,6 +67,7 @@ function createAndAppendPostDetails(
   }
 
   post.setAttribute("data-rownumber", documentNumber);
+  post.setAttribute("data-column", column);
   parent.appendChild(post);
 
   return post;

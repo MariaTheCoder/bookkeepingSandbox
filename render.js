@@ -29,114 +29,69 @@ function render() {
     const dataObject = storedData[i];
 
     if (dataObject.editable) {
-      createAndAppendPostDetails(
-        "input",
-        dataObject.documentNumber,
-        postContainer,
-        dataObject.documentNumber
-      );
-      createAndAppendPostDetails(
-        "input",
-        dataObject.date,
-        postContainer,
-        dataObject.documentNumber
-      );
-      createAndAppendPostDetails(
-        "input",
-        dataObject.text,
-        postContainer,
-        dataObject.documentNumber
-      );
-      createAndAppendPostDetails(
-        "input",
-        dataObject.account,
-        postContainer,
-        dataObject.documentNumber
-      );
-      createAndAppendPostDetails(
-        "select",
-        dataObject.debitCredit,
-        postContainer,
-        dataObject.documentNumber
-      );
-      createAndAppendPostDetails(
-        "input",
-        Number(dataObject.amount).toFixed(2),
-        postContainer,
-        dataObject.documentNumber
-      );
-      createAndAppendPostDetails(
-        "select",
-        dataObject.currency,
-        postContainer,
-        dataObject.documentNumber
-      );
-      createAndAppendPostDetails(
-        "input",
-        dataObject.offsetAccount,
-        postContainer,
-        dataObject.documentNumber
-      );
+      for (const property in dataObject) {
+        if (Object.hasOwnProperty.call(dataObject, property)) {
+          const value = dataObject[property];
 
+          if (property !== "editable") {
+            if (property === "amount") {
+              createAndAppendPostDetails(
+                "input",
+                Number(value).toFixed(2),
+                property,
+                postContainer,
+                dataObject.documentNumber
+              );
+            } else if (property === "currency" || property === "debitCredit") {
+              createAndAppendPostDetails(
+                "select",
+                value,
+                property,
+                postContainer,
+                dataObject.documentNumber
+              );
+            } else {
+              createAndAppendPostDetails(
+                "input",
+                value,
+                property,
+                postContainer,
+                dataObject.documentNumber
+              );
+            }
+          }
+        }
+      }
       createActionButtons("save", postContainer, dataObject);
       createActionButtons("delete", postContainer, dataObject);
     } else {
-      createAndAppendPostDetails(
-        "div",
-        dataObject.documentNumber,
-        postContainer,
-        dataObject.documentNumber,
-        dataObject.selected
-      );
-      createAndAppendPostDetails(
-        "div",
-        dataObject.date,
-        postContainer,
-        dataObject.documentNumber,
-        dataObject.selected
-      );
-      createAndAppendPostDetails(
-        "div",
-        dataObject.text,
-        postContainer,
-        dataObject.documentNumber,
-        dataObject.selected
-      );
-      createAndAppendPostDetails(
-        "div",
-        dataObject.account,
-        postContainer,
-        dataObject.documentNumber,
-        dataObject.selected
-      );
-      createAndAppendPostDetails(
-        "div",
-        dataObject.debitCredit,
-        postContainer,
-        dataObject.documentNumber,
-        dataObject.selected
-      );
-      createAndAppendPostDetails(
-        "div",
-        Number(dataObject.amount).toFixed(2),
-        postContainer,
-        dataObject.documentNumber,
-        dataObject.selected
-      );
-      createAndAppendPostDetails(
-        "div",
-        dataObject.currency,
-        postContainer,
-        dataObject.documentNumber,
-        dataObject.selected
-      );
-      createAndAppendPostDetails(
-        "div",
-        dataObject.offsetAccount,
-        postContainer,
-        dataObject.documentNumber,
-        dataObject.selected
-      );
+      for (const property in dataObject) {
+        if (Object.hasOwnProperty.call(dataObject, property)) {
+          const value = dataObject[property];
+
+          if (property !== "editable") {
+            if (property === "amount") {
+              createAndAppendPostDetails(
+                "div",
+                Number(value).toFixed(2),
+                property,
+                postContainer,
+                dataObject.documentNumber,
+                dataObject.selected
+              );
+            } else {
+              createAndAppendPostDetails(
+                "div",
+                value,
+                property,
+                postContainer,
+                dataObject.documentNumber,
+                dataObject.selected
+              );
+            }
+          }
+        }
+      }
       createActionButtons("edit", postContainer, dataObject);
       createActionButtons("delete", postContainer, dataObject);
     }
