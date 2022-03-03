@@ -1,5 +1,5 @@
 function validateInput() {
-  let inputData = {};
+  let inputData = { columns: {} };
 
   const inputFields = document.getElementsByTagName("input");
 
@@ -12,17 +12,19 @@ function validateInput() {
   }
 
   // firstly, we want to save and store the input data in the inputData object
-  inputData = {
-    documentNumber: document.getElementById("documentNumber").value,
-    date: document.getElementById("date").value,
-    text: document.getElementById("text").value,
-    account: document.getElementById("account").value,
-    debitCredit: document.getElementById("debitCredit").value,
-    amount: Number(document.getElementById("amount").value).toFixed(2),
-    currency: document.getElementById("currency").value,
-    offsetAccount: document.getElementById("offsetAccount").value,
-    editable: false,
-  };
+  inputData.columns.documentNumber =
+    document.getElementById("documentNumber").value;
+  inputData.columns.date = document.getElementById("date").value;
+  inputData.columns.text = document.getElementById("text").value;
+  inputData.columns.account = document.getElementById("account").value;
+  inputData.columns.debitCredit = document.getElementById("debitCredit").value;
+  inputData.columns.amount = Number(
+    document.getElementById("amount").value
+  ).toFixed(2);
+  inputData.columns.currency = document.getElementById("currency").value;
+  inputData.columns.offsetAccount =
+    document.getElementById("offsetAccount").value;
+  inputData.editable = false;
 
   // insert new data as the first element in storedData array
   postNewPost2DB(inputData);
