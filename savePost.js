@@ -1,11 +1,7 @@
-function savePost(documentNumber) {
-  const found = storedData.find(
-    (post) => post.documentNumber === documentNumber
-  );
+function savePost(index, updatedData) {
+  storedData.splice(index, 1, updatedData);
 
-  if (found) {
-    found.editable = false;
-  }
+  storedData[index].editable = false;
 
   render();
 }

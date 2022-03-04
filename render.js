@@ -27,12 +27,12 @@ function render() {
 
   for (let i = 0; i < storedData.length; i++) {
     const dataObject = storedData[i];
+    const dataColumns = storedData[i].columns;
 
     if (dataObject.editable) {
-      for (const property in dataObject) {
-        if (Object.hasOwnProperty.call(dataObject, property)) {
-          const value = dataObject[property];
-          if (property === "editable") continue;
+      for (const property in dataColumns) {
+        if (Object.hasOwnProperty.call(dataColumns, property)) {
+          const value = dataColumns[property];
 
           if (property === "amount") {
             createAndAppendPostDetails(
@@ -40,7 +40,7 @@ function render() {
               Number(value).toFixed(2),
               property,
               postContainer,
-              dataObject.documentNumber
+              dataColumns.documentNumber
             );
           } else if (property === "currency" || property === "debitCredit") {
             createAndAppendPostDetails(
@@ -48,7 +48,7 @@ function render() {
               value,
               property,
               postContainer,
-              dataObject.documentNumber
+              dataColumns.documentNumber
             );
           } else {
             createAndAppendPostDetails(
@@ -56,7 +56,7 @@ function render() {
               value,
               property,
               postContainer,
-              dataObject.documentNumber
+              dataColumns.documentNumber
             );
           }
         }
@@ -64,30 +64,28 @@ function render() {
       createActionButtons("save", postContainer, dataObject);
       createActionButtons("delete", postContainer, dataObject);
     } else {
-      for (const property in dataObject) {
-        if (Object.hasOwnProperty.call(dataObject, property)) {
-          const value = dataObject[property];
+      for (const property in dataColumns) {
+        if (Object.hasOwnProperty.call(dataColumns, property)) {
+          const value = dataColumns[property];
 
-          if (property !== "editable") {
-            if (property === "amount") {
-              createAndAppendPostDetails(
-                "div",
-                Number(value).toFixed(2),
-                property,
-                postContainer,
-                dataObject.documentNumber,
-                dataObject.selected
-              );
-            } else {
-              createAndAppendPostDetails(
-                "div",
-                value,
-                property,
-                postContainer,
-                dataObject.documentNumber,
-                dataObject.selected
-              );
-            }
+          if (property === "amount") {
+            createAndAppendPostDetails(
+              "div",
+              Number(value).toFixed(2),
+              property,
+              postContainer,
+              dataColumns.documentNumber,
+              dataObject.selected
+            );
+          } else {
+            createAndAppendPostDetails(
+              "div",
+              value,
+              property,
+              postContainer,
+              dataColumns.documentNumber,
+              dataObject.selected
+            );
           }
         }
       }
