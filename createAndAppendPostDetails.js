@@ -50,7 +50,9 @@ function createAndAppendPostDetails(
     post.addEventListener("click", () => {
       storedData.forEach((element) => (element.selected = false));
 
-      const found = storedData.find((p) => p.documentNumber === documentNumber);
+      const found = storedData.find(
+        (p) => p.columns.documentNumber === documentNumber
+      );
 
       if (found) {
         found.selected = true;
