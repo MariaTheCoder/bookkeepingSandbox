@@ -17,43 +17,38 @@ function validateEdit(documentNumber) {
   // check if inputs are valid
 
   function isCorrectInputType(inputColumnData) {
-    let returnValue = true;
+    const expectedTypes = {
+      documentNumber: "number",
+      account: "number",
+      amount: "number",
+      offsetAccount: "number",
+      text: "string",
+    };
     const validatorObject = {};
+
     for (let i = 0; i < inputColumnData.length; i++) {
       const element = inputColumnData[i];
+      const attribute = element.getAttribute("data-column");
+      validatorObject[attribute] = true;
 
       if (
-        element.getAttribute("data-column") === "debitCredit" ||
-        element.getAttribute("data-column") === "currency" ||
-        element.getAttribute("data-column") === "date"
-      ) {
-        validatorObject[element.getAttribute("data-column")] = "not checked";
-        continue;
-      }
-
-      if (
-        element.getAttribute("data-column") === "documentNumber" ||
-        element.getAttribute("data-column") === "account" ||
-        element.getAttribute("data-column") === "amount" ||
-        element.getAttribute("data-column") === "offsetAccount"
-      ) {
-        returnValue = !isNaN(parseFloat(element.value));
-        validatorObject[element.getAttribute("data-column")] = returnValue;
-      }
-      if (element.getAttribute("data-column") === "text") {
-        returnValue = typeof element.value === "string";
-        validatorObject[element.getAttribute("data-column")] = returnValue;
-      }
-
-      // if (returnValue === false) return returnValue;
+        (expectedTypes[attribute] === "string" &&
+          expectedTypes[attribute] !== typeof element.value) ||
+        (expectedTypes[attribute] === "number" &&
+          isNaN(parseFloat(element.value)))
+      )
+        validatorObject[attribute] = false;
     }
-    console.log(validatorObject);
-    // return returnValue;
+    return validatorObject;
   }
 
-  if (!isCorrectInputType(collection)) {
-    return alert("Incorrect input types");
+  const validatedData = isCorrectInputType(collection);
+  let alertMessage = "";
+  for (const attribute in validatedData) {
+    const element = validatedData[attribute];
+    if (element === false) alertMessage += `${attribute} incorrectly set.\n`;
   }
+  if (alertMessage.length > 0) alert(alertMessage);
 
   // add properties and new values to the inputData object
   collection.forEach((element) => {
