@@ -60,7 +60,6 @@ function validateEdit(documentNumber) {
   });
   inputData.editable = false;
 
-  // insert new data as the first element in storedData array
-
+  // transfer the index of changed data inside of the storedData array as well as the edit inputData to the next function
   savePost(indexOfFound, inputData);
 }
