@@ -53,25 +53,14 @@ function validateEdit(documentNumber) {
   // add properties and new values to the inputData object
   collection.forEach((element) => {
     if (element.getAttribute("data-column") === "amount") {
-      inputData.columns[element.getAttribute("data-column")] = parseFloat(
-        element.value
-      ).toLocaleString();
+      inputData.columns[element.getAttribute("data-column")] = element.value;
     } else {
       inputData.columns[element.getAttribute("data-column")] = element.value;
     }
   });
   inputData.editable = false;
 
-  // check if a post exists in the bookkeeping with the same document number, which is not allowed
-  // if (repeatedDocNumber(documentNumber)) {
-  //   return alert("Document number is already used");
-  // }
-
-  // firstly, we want to save and store the input data in the inputData object
-  // for (let i = 0; i < [...collection].length - 2; i++) {
-  //   const element = [...collection][i];
-  // }
-
   // insert new data as the first element in storedData array
+
   savePost(indexOfFound, inputData);
 }
