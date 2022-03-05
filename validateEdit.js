@@ -15,7 +15,6 @@ function validateEdit(documentNumber) {
   const collection = [...HTMLCollection].splice(0, HTMLCollection.length - 2);
 
   // check if inputs are valid
-
   function isCorrectInputType(inputColumnData) {
     const expectedTypes = {
       documentNumber: "number",
