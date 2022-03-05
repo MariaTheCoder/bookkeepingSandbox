@@ -17,11 +17,11 @@ input[type="number"] {
   visibility: hidden;
 }
 
-.display-bookkeeping {
+.post-header-container {
   margin-top: 50px;
 }
 
-.display-bookkeeping,
+.post-header-container,
 .created-posts {
   display: grid;
   grid-template-columns: repeat(8, 150px) repeat(2, 35px);
