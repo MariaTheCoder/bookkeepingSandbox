@@ -66,7 +66,10 @@ function createAndAppendPostDetails(
     if (selected) {
       post.classList.add("selected");
     }
-  } else if (tag === "input") {
+  } else if (tag === "input" && column === "date") {
+    post.type = "date";
+    post.value = innerText;
+  } else {
     post.value = innerText;
   }
 
