@@ -9,7 +9,7 @@ function render() {
     document.getElementById("delete-all-posts").classList.add("hidden");
     document.getElementById("default-text").classList.remove("hidden");
 
-    const postHeaders = document.querySelectorAll(".post-headers");
+    const postHeaders = document.querySelectorAll(".post-header");
     postHeaders.forEach((element) => {
       element.classList.add("hidden");
     });
@@ -19,7 +19,7 @@ function render() {
     document.getElementById("default-text").classList.add("hidden");
 
     // remove hidden class from all elements in the post-detail class
-    const postHeaders = document.querySelectorAll(".post-headers");
+    const postHeaders = document.querySelectorAll(".post-header");
     postHeaders.forEach((element) => {
       element.classList.remove("hidden");
     });

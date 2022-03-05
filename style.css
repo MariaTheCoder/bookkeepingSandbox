@@ -42,12 +42,12 @@ input[type="number"] {
   border: transparent !important;
 }
 
-.post-headers {
+.post-header {
   font-weight: bold;
 }
 
 .post-detail,
-.post-headers {
+.post-header {
   border: 2px solid rgba(0, 0, 0, 0.479);
   border-collapse: collapse;
 
