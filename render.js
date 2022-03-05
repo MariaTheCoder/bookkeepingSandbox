@@ -2,7 +2,7 @@ function render() {
   deleteAllPosts();
 
   // create a container for new posts with a fitting id to display in document
-  let postContainer = document.getElementById("display-bookkeeping");
+  let postContainer = document.getElementById("created-posts");
   postContainer.classList.add("postContainer");
 
   if (storedData.length === 0) {

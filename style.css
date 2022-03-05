@@ -18,9 +18,13 @@ input[type="number"] {
 }
 
 .display-bookkeeping {
+  margin-top: 50px;
+}
+
+.display-bookkeeping,
+.created-posts {
   display: grid;
   grid-template-columns: repeat(8, 150px) repeat(2, 35px);
-  margin-top: 50px;
 }
 
 .default-text {
