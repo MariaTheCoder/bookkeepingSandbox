@@ -18,9 +18,9 @@ function validateInput() {
   inputData.columns.text = document.getElementById("text").value;
   inputData.columns.account = document.getElementById("account").value;
   inputData.columns.debitCredit = document.getElementById("debitCredit").value;
-  inputData.columns.amount = Number(
+  inputData.columns.amount = parseFloat(
     document.getElementById("amount").value
-  ).toFixed(2);
+  ).toLocaleString("de-DE");
   inputData.columns.currency = document.getElementById("currency").value;
   inputData.columns.offsetAccount =
     document.getElementById("offsetAccount").value;

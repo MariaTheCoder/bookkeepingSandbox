@@ -37,7 +37,7 @@ function render() {
           if (property === "amount") {
             createAndAppendPostDetails(
               "input",
-              Number(value).toFixed(2),
+              value,
               property,
               postContainer,
               dataColumns.documentNumber
@@ -71,7 +71,7 @@ function render() {
           if (property === "amount") {
             createAndAppendPostDetails(
               "div",
-              Number(value).toFixed(2),
+              value,
               property,
               postContainer,
               dataColumns.documentNumber,
