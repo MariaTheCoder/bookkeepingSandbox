@@ -32,7 +32,8 @@
           id="documentNumber"
           name="documentNumber"
           placeholder="document number"
-          value="1"
+          min="0"
+          oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"
           required
         />
         <input
