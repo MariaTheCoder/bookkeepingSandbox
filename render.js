@@ -25,7 +25,7 @@ function render() {
     postHeadersContainer.classList.remove("hidden");
   }
 
-  sortByDocumentNumber(storedData);
+  sortBy(storedData, "documentNumber");
 
   for (let i = 0; i < storedData.length; i++) {
     const dataObject = storedData[i];
