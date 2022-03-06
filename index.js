@@ -16,7 +16,8 @@ const createNewPostButton = document.getElementById("create-new-post");
 const deleteAllPostsButton = document.getElementById("delete-all-posts");
 
 // headers
-const documentNumberHeader = document.getElementById("document_number");
+const documentNumberHeader = document.getElementById("documentNumber-header");
+const dateHeader = document.getElementById("date-header");
 
 if (inputAccount)
   inputAccount.addEventListener("keyup", () => {
@@ -34,3 +35,6 @@ if (documentNumberHeader)
   documentNumberHeader.addEventListener("click", () =>
     sortBy(storedData, "documentNumber")
   );
+
+if (dateHeader)
+  dateHeader.addEventListener("click", () => sortBy(storedData, "date"));
