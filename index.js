@@ -1,4 +1,14 @@
 let storedData = [];
+const isSortOrderAscending = {
+  documentNumber: false,
+  date: false,
+  text: false,
+  account: false,
+  debitCredit: false,
+  amount: false,
+  currency: false,
+  offsetAccount: false,
+};
 let postId = 1;
 
 const inputAccount = document.getElementById("account");
@@ -22,5 +32,5 @@ if (deleteAllPostsButton)
 
 if (documentNumberHeader)
   documentNumberHeader.addEventListener("click", () =>
-    console.log("I was clicked!")
+    sortBy(storedData, "documentNumber")
   );
