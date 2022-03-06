@@ -15,32 +15,6 @@ function validateEdit(documentNumber) {
   const collection = [...HTMLCollection].splice(0, HTMLCollection.length - 2);
 
   // check if inputs are valid
-  function isCorrectInputType(inputColumnData) {
-    const expectedTypes = {
-      documentNumber: "number",
-      account: "number",
-      amount: "number",
-      offsetAccount: "number",
-      text: "string",
-    };
-    const validatorObject = {};
-
-    for (let i = 0; i < inputColumnData.length; i++) {
-      const element = inputColumnData[i];
-      const attribute = element.getAttribute("data-column");
-      validatorObject[attribute] = true;
-
-      if (
-        (expectedTypes[attribute] === "string" &&
-          expectedTypes[attribute] !== typeof element.value) ||
-        (expectedTypes[attribute] === "number" &&
-          isNaN(parseFloat(element.value)))
-      )
-        validatorObject[attribute] = false;
-    }
-    return validatorObject;
-  }
-
   const validatedData = isCorrectInputType(collection);
   let alertMessage = "";
   for (const attribute in validatedData) {
