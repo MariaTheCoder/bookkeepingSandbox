@@ -12,7 +12,7 @@ function render() {
     const postHeadersContainer = document.getElementById(
       "post-header-container"
     );
-    postHeadersContainer.classList.remove("hidden");
+    postHeadersContainer.classList.add("hidden");
   } else {
     // show table and delete all button and hide default text
     document.getElementById("delete-all-posts").classList.remove("hidden");
