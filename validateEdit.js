@@ -8,7 +8,6 @@ function validateEdit(postId) {
   const HTMLCollection = document.querySelectorAll(`[post-id="${postId}"]`);
 
   const collection = [...HTMLCollection].splice(0, HTMLCollection.length - 2);
-  console.log(collection);
 
   // check if inputs are valid
   const validatedData = isCorrectInputType(collection);
