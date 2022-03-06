@@ -16,7 +16,7 @@ function validateEdit(postId) {
     const element = validatedData[attribute];
     if (element === false) alertMessage += `${attribute} incorrectly set.\n`;
   }
-  if (alertMessage.length > 0) alert(alertMessage);
+  if (alertMessage.length > 0) return alert(alertMessage);
 
   // add properties and new values to the inputData object
   collection.forEach((element) => {
