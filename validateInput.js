@@ -25,6 +25,7 @@ function validateInput() {
   inputData.columns.offsetAccount =
     document.getElementById("offsetAccount").value;
   inputData.editable = false;
+  inputData.postId = postId++;
 
   // insert new data as the first element in storedData array
   postNewPost2DB(inputData);

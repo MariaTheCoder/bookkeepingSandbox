@@ -1,7 +1,5 @@
-function editPost(documentNumber) {
-  const found = storedData.find(
-    (post) => post.columns.documentNumber == documentNumber
-  );
+function editPost(postId) {
+  const found = storedData.find((post) => post.postId == postId);
 
   if (found) {
     found.editable = true;

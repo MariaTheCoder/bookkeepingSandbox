@@ -1,18 +1,14 @@
-function validateEdit(documentNumber) {
+function validateEdit(postId) {
   let inputData = { columns: {} };
 
-  // find index of row element in storedData
-
-  const found = storedData.find(
-    (post) => post.columns.documentNumber == documentNumber
-  );
+  // find index of row element in storedData that is to be edited
+  const found = storedData.find((post) => post.postId == postId);
   const indexOfFound = storedData.indexOf(found);
 
-  const HTMLCollection = document.querySelectorAll(
-    `[data-rownumber="${documentNumber}"]`
-  );
+  const HTMLCollection = document.querySelectorAll(`[post-id="${postId}"]`);
 
   const collection = [...HTMLCollection].splice(0, HTMLCollection.length - 2);
+  console.log(collection);
 
   // check if inputs are valid
   const validatedData = isCorrectInputType(collection);
@@ -32,6 +28,7 @@ function validateEdit(documentNumber) {
     }
   });
   inputData.editable = false;
+  inputData.postId = postId;
 
   // transfer the index of changed data inside of the storedData array as well as the edit inputData to the next function
   savePost(indexOfFound, inputData);

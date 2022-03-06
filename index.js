@@ -1,4 +1,5 @@
 let storedData = [];
+let postId = 1;
 
 const inputAccount = document.getElementById("account");
 const createNewPostButton = document.getElementById("create-new-post");

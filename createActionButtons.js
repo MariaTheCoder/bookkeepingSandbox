@@ -1,27 +1,27 @@
 function createActionButtons(action, parent, dataObject) {
   let newAction = document.createElement("span");
-  const documentNumber = dataObject.columns.documentNumber;
+  const postId = dataObject.postId;
 
   if (action === "edit") {
     newAction.innerText = "✏️";
-    newAction.setAttribute("data-rownumber", documentNumber);
+    newAction.setAttribute("post-id", postId);
     newAction.addEventListener("click", () => {
-      editPost(documentNumber);
+      editPost(postId);
     });
   }
 
   if (action === "delete") {
     newAction.innerText = "❌";
-    newAction.setAttribute("data-rownumber", documentNumber);
+    newAction.setAttribute("post-id", postId);
     newAction.addEventListener("click", () => {
-      removeDataObjectFromDB(documentNumber);
+      removeDataObjectFromDB(postId);
     });
   }
 
   if (action === "save") {
     newAction.innerText = "💾";
-    newAction.setAttribute("data-rownumber", documentNumber);
-    newAction.addEventListener("click", () => validateEdit(documentNumber));
+    newAction.setAttribute("post-id", postId);
+    newAction.addEventListener("click", () => validateEdit(postId));
   }
 
   newAction.className = action + " post-detail";
