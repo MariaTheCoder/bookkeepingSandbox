@@ -19,6 +19,7 @@ const deleteAllPostsButton = document.getElementById("delete-all-posts");
 const documentNumberHeader = document.getElementById("documentNumber-header");
 const dateHeader = document.getElementById("date-header");
 const textHeader = document.getElementById("text-header");
+const accountHeader = document.getElementById("account-header");
 
 if (inputAccount)
   inputAccount.addEventListener("keyup", () => {
@@ -38,15 +39,23 @@ if (documentNumberHeader)
     render();
   });
 
-if (dateHeader)
-  dateHeader.addEventListener("click", function () {
+if (dateHeader) {
+  dateHeader.addEventListener("click", () => {
     sortBy(storedData, "date");
     render();
   });
+}
 
 if (textHeader) {
-  textHeader.addEventListener("click", function () {
+  textHeader.addEventListener("click", () => {
     sortBy(storedData, "text");
+    render();
+  });
+}
+
+if (accountHeader) {
+  accountHeader.addEventListener("click", () => {
+    sortBy(storedData, "account");
     render();
   });
 }
