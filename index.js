@@ -22,6 +22,7 @@ const textHeader = document.getElementById("text-header");
 const accountHeader = document.getElementById("account-header");
 const debitCreditHeader = document.getElementById("debitCredit-header");
 const amountHeader = document.getElementById("amount-header");
+const currencyHeader = document.getElementById("currency-header");
 
 if (inputAccount)
   inputAccount.addEventListener("keyup", () => {
@@ -72,6 +73,13 @@ if (debitCreditHeader) {
 if (amountHeader) {
   amountHeader.addEventListener("click", () => {
     sortBy(storedData, "amount");
+    render();
+  });
+}
+
+if (currencyHeader) {
+  currencyHeader.addEventListener("click", () => {
+    sortBy(storedData, "currency");
     render();
   });
 }
