@@ -26,7 +26,8 @@ function sortBy(arrayOfObjects, column) {
             new Date(b.columns[column]).getTime() -
             new Date(a.columns[column]).getTime()
         );
-  } else if (expectedTypes[column] === "number") {
+  }
+  if (expectedTypes[column] === "number") {
     isSortOrderAscending[column]
       ? arrayOfObjects.sort(
           (a, b) => Number(a.columns[column]) - Number(b.columns[column])
@@ -35,7 +36,13 @@ function sortBy(arrayOfObjects, column) {
           (a, b) => Number(b.columns[column]) - Number(a.columns[column])
         );
   }
-  isSortOrderAscending[column]
-    ? arrayOfObjects.sort((a, b) => a.columns[column] - b.columns[column])
-    : arrayOfObjects.sort((a, b) => b.columns[column] - a.columns[column]);
+  if (expectedTypes[column] === "string") {
+    isSortOrderAscending[column]
+      ? arrayOfObjects.sort((a, b) =>
+          a.columns[column].localeCompare(b.columns[column])
+        )
+      : arrayOfObjects.sort((a, b) =>
+          b.columns[column].localeCompare(a.columns[column])
+        );
+  }
 }

@@ -18,6 +18,7 @@ const deleteAllPostsButton = document.getElementById("delete-all-posts");
 // headers
 const documentNumberHeader = document.getElementById("documentNumber-header");
 const dateHeader = document.getElementById("date-header");
+const textHeader = document.getElementById("text-header");
 
 if (inputAccount)
   inputAccount.addEventListener("keyup", () => {
@@ -42,3 +43,10 @@ if (dateHeader)
     sortBy(storedData, "date");
     render();
   });
+
+if (textHeader) {
+  textHeader.addEventListener("click", function () {
+    sortBy(storedData, "text");
+    render();
+  });
+}
