@@ -20,6 +20,7 @@ const documentNumberHeader = document.getElementById("documentNumber-header");
 const dateHeader = document.getElementById("date-header");
 const textHeader = document.getElementById("text-header");
 const accountHeader = document.getElementById("account-header");
+const debitCreditHeader = document.getElementById("debitCredit-header");
 
 if (inputAccount)
   inputAccount.addEventListener("keyup", () => {
@@ -34,7 +35,7 @@ if (deleteAllPostsButton)
   deleteAllPostsButton.addEventListener("click", clearDB);
 
 if (documentNumberHeader)
-  documentNumberHeader.addEventListener("click", function () {
+  documentNumberHeader.addEventListener("click", () => {
     sortBy(storedData, "documentNumber");
     render();
   });
@@ -56,6 +57,13 @@ if (textHeader) {
 if (accountHeader) {
   accountHeader.addEventListener("click", () => {
     sortBy(storedData, "account");
+    render();
+  });
+}
+
+if (debitCreditHeader) {
+  debitCreditHeader.addEventListener("click", () => {
+    sortBy(storedData, "debitCredit");
     render();
   });
 }
