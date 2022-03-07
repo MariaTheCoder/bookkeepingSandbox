@@ -21,6 +21,7 @@ const dateHeader = document.getElementById("date-header");
 const textHeader = document.getElementById("text-header");
 const accountHeader = document.getElementById("account-header");
 const debitCreditHeader = document.getElementById("debitCredit-header");
+const amountHeader = document.getElementById("amount-header");
 
 if (inputAccount)
   inputAccount.addEventListener("keyup", () => {
@@ -64,6 +65,13 @@ if (accountHeader) {
 if (debitCreditHeader) {
   debitCreditHeader.addEventListener("click", () => {
     sortBy(storedData, "debitCredit");
+    render();
+  });
+}
+
+if (amountHeader) {
+  amountHeader.addEventListener("click", () => {
+    sortBy(storedData, "amount");
     render();
   });
 }
