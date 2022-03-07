@@ -28,6 +28,4 @@ function sortBy(arrayOfObjects, column) {
           (a, b) => Number(b.columns[column]) - Number(a.columns[column])
         );
   }
-
-  render();
 }

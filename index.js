@@ -32,9 +32,13 @@ if (deleteAllPostsButton)
   deleteAllPostsButton.addEventListener("click", clearDB);
 
 if (documentNumberHeader)
-  documentNumberHeader.addEventListener("click", () =>
-    sortBy(storedData, "documentNumber")
-  );
+  documentNumberHeader.addEventListener("click", function () {
+    sortBy(storedData, "documentNumber");
+    render();
+  });
 
 if (dateHeader)
-  dateHeader.addEventListener("click", () => sortBy(storedData, "date"));
+  dateHeader.addEventListener("click", function () {
+    sortBy(storedData, "date");
+    render();
+  });
