@@ -1,8 +1,12 @@
 function repeatedDocNumber(documentNumber) {
+  let postIfRepeated;
+
   for (let i = 0; i < storedData.length; i++) {
     const post = storedData[i]["columns"];
 
-    if (Number(post.documentNumber) === Number(documentNumber)) return true;
+    Number(post.documentNumber) === Number(documentNumber)
+      ? (postIfRepeated = post)
+      : (postIfRepeated = null);
   }
-  return false;
+  return postIfRepeated;
 }

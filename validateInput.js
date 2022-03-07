@@ -6,15 +6,18 @@ function validateInput() {
   if (!isInputFieldRequiredAndFilledOut(inputFields))
     return alert("All input fields need to be filled out");
 
-  // check if a post exists in the bookkeeping with the same document number, which is not allowed
-  if (repeatedDocNumber(document.getElementById("documentNumber").value)) {
-    return alert("Document number is already used");
-  }
-
   // firstly, we want to save and store the input data in the inputData object
   inputData.columns.documentNumber =
     document.getElementById("documentNumber").value;
-  inputData.columns.date = document.getElementById("date").value;
+
+  // check if a post exists in the bookkeeping with the same document number, we want to reuse the already stored date
+  let postIfRepeated = repeatedDocNumber(
+    document.getElementById("documentNumber").value
+  );
+  postIfRepeated != null
+    ? (inputData.columns.date = postIfRepeated.date)
+    : (inputData.columns.date = document.getElementById("date").value);
+
   inputData.columns.text = document.getElementById("text").value;
   inputData.columns.account = document.getElementById("account").value;
   inputData.columns.debitCredit = document.getElementById("debitCredit").value;
@@ -27,6 +30,7 @@ function validateInput() {
   inputData.editable = false;
   inputData.postId = postId++;
 
-  // insert new data as the first element in storedData array
+  // insert new data as the first element in stored
+  console.log(inputData);
   postNewPost2DB(inputData);
 }
