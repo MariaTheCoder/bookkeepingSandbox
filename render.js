@@ -5,9 +5,16 @@ function render() {
   let postContainer = document.getElementById("created-posts");
   postContainer.classList.add("postContainer");
 
+  const defaultText = createAndAppendDefaultText(
+    "p",
+    "default-text",
+    "currently no posts",
+    "default-text-container"
+  );
+
   if (storedData.length === 0) {
     document.getElementById("delete-all-posts").classList.add("hidden");
-    document.getElementById("default-text").classList.remove("hidden");
+    defaultText.classList.remove("hidden");
 
     const postHeadersContainer = document.getElementById(
       "post-header-container"
@@ -16,7 +23,7 @@ function render() {
   } else {
     // show table and delete all button and hide default text
     document.getElementById("delete-all-posts").classList.remove("hidden");
-    document.getElementById("default-text").classList.add("hidden");
+    defaultText.classList.add("hidden");
 
     // remove hidden class from the post headers container
     const postHeadersContainer = document.getElementById(

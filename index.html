@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="createAndAppendDefaultText.js"></script>
     <script defer src="sortBy.js"></script>
     <script defer src="isCreditDefault.js"></script>
     <script defer src="isInputFieldRequiredAndFilledOut.js"></script>
@@ -91,7 +92,7 @@
         />
         <button class="buttons" id="create-new-post">Add new post</button>
       </div>
-      <p class="default-text" id="default-text">There are no current posts</p>
+      <div id="default-text-container"></div>
     </div>
     <div class="post-header-container hidden" id="post-header-container">
       <div class="post-header" id="documentNumber-header">Document number</div>
