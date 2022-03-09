@@ -8,7 +8,7 @@ function render() {
   const defaultText = createAndAppendDefaultText(
     "p",
     "default-text",
-    "currently no posts",
+    "There are currently no posts...",
     "default-text-container"
   );
 
