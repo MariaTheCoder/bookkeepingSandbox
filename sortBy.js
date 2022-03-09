@@ -12,8 +12,6 @@ function sortBy(arrayOfObjects, column) {
 
   isSortOrderAscending[column] = !isSortOrderAscending[column];
 
-  console.log(storedData[0].columns[column]);
-
   if (expectedTypes[column] === "date") {
     isSortOrderAscending[column]
       ? arrayOfObjects.sort(

@@ -31,6 +31,5 @@ function validateInput() {
   inputData.postId = postId++;
 
   // insert new data as the first element in stored
-  console.log(inputData);
   postNewPost2DB(inputData);
 }
