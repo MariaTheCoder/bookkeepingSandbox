@@ -13,7 +13,6 @@ let postId = 1;
 
 const inputAccount = document.getElementById("account");
 const createNewPostButton = document.getElementById("create-new-post");
-const deleteAllPostsButton = document.getElementById("delete-all-posts");
 
 if (inputAccount)
   inputAccount.addEventListener("keyup", () => {
@@ -24,5 +23,3 @@ if (inputAccount)
 
 if (createNewPostButton)
   createNewPostButton.addEventListener("click", validateInput);
-if (deleteAllPostsButton)
-  deleteAllPostsButton.addEventListener("click", clearDB);

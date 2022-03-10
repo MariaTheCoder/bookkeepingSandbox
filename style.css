@@ -12,11 +12,6 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.hidden {
-  /* display: none; */
-  visibility: hidden;
-}
-
 .post-header-container {
   margin-top: 50px;
 }
@@ -55,7 +50,7 @@ input[type="number"] {
   grid-template-columns: inherit;
 }
 
-.delete-button {
+.delete-button-container {
   margin-top: 20px;
 }
 

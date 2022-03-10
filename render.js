@@ -5,33 +5,18 @@ function render() {
   let postContainer = document.getElementById("created-posts");
   postContainer.classList.add("postContainer");
 
-  const defaultText = createAndAppendDefaultText(
-    "p",
-    "default-text",
-    "There are currently no posts...",
-    "default-text-container"
-  );
-
   if (storedData.length === 0) {
-    document.getElementById("delete-all-posts").classList.add("hidden");
-    defaultText.classList.remove("hidden");
-
-    const postHeadersContainer = document.getElementById(
-      "post-header-container"
+    // if no posts are found in the database, create a default text to display in document
+    createAndAppendDefaultText(
+      "p",
+      "default-text",
+      "There are currently no posts...",
+      "default-text-container"
     );
-    postHeadersContainer.classList.add("hidden");
   } else {
-    // show table and delete all button and hide default text
-    document.getElementById("delete-all-posts").classList.remove("hidden");
-    defaultText.classList.add("hidden");
-
+    // if posts are found in the database, create headers and a button to delete all posts upon click
     createAllHeaders();
-
-    // remove hidden class from the post headers container
-    const postHeadersContainer = document.getElementById(
-      "post-header-container"
-    );
-    postHeadersContainer.classList.remove("hidden");
+    createDeleteAllPostsButton();
   }
 
   for (let i = 0; i < storedData.length; i++) {
