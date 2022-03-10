@@ -1,6 +1,7 @@
 function createActionButtons(action, parent, dataObject) {
   let newAction = document.createElement("span");
   const postId = dataObject.postId;
+  const documentNumber = dataObject["columns"]["documentNumber"];
 
   if (action === "edit") {
     newAction.innerText = "✏️";
@@ -13,9 +14,9 @@ function createActionButtons(action, parent, dataObject) {
   if (action === "delete") {
     newAction.innerText = "❌";
     newAction.setAttribute("post-id", postId);
-    newAction.addEventListener("click", () => {
-      removeDataObjectFromDB(postId);
-    });
+    newAction.addEventListener("click", () =>
+      removeDataObjectFromDB(documentNumber)
+    );
   }
 
   if (action === "save") {

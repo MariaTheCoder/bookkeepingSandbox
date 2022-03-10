@@ -1,9 +1,11 @@
-function removeDataObjectFromDB(id) {
+function removeDataObjectFromDB(documentNumber) {
+  console.log(`clicked element: ${documentNumber}`);
   for (let i = 0; i < storedData.length; i++) {
-    const dataObject = storedData[i]["columns"];
+    const documentNumberOfStoredData = storedData[i].columns["documentNumber"];
 
-    if (dataObject.documentNumber === id) {
+    if (documentNumberOfStoredData === documentNumber) {
       storedData.splice(i, 1);
+      i--;
     }
   }
 
