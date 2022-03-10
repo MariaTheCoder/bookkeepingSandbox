@@ -25,12 +25,7 @@ function render() {
     document.getElementById("delete-all-posts").classList.remove("hidden");
     defaultText.classList.add("hidden");
 
-    // create headers
-    createAndAppendPostHeaders(
-      "documentNumber-header",
-      "Document number",
-      "documentNumber"
-    );
+    createAllHeaders();
 
     // remove hidden class from the post headers container
     const postHeadersContainer = document.getElementById(

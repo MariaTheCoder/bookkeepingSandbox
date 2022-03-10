@@ -28,10 +28,12 @@ function sortBy(arrayOfObjects, column) {
   if (expectedTypes[column] === "number") {
     isSortOrderAscending[column]
       ? arrayOfObjects.sort(
-          (a, b) => Number(a.columns[column]) - Number(b.columns[column])
+          (a, b) =>
+            parseFloat(a.columns[column]) - parseFloat(b.columns[column])
         )
       : arrayOfObjects.sort(
-          (a, b) => Number(b.columns[column]) - Number(a.columns[column])
+          (a, b) =>
+            parseFloat(b.columns[column]) - parseFloat(a.columns[column])
         );
   }
   if (expectedTypes[column] === "string") {

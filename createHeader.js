@@ -1,8 +1,4 @@
-function createAndAppendPostHeaders(id, headerText, columnName) {
-  // declare parent element
-  const headerContainer = document.getElementById("post-header-container");
-  headerContainer.innerHTML = "";
-
+function createHeader(id, headerText, columnName, parent) {
   // create a header element and give proper id and class names
   const header = document.createElement("div");
   header.classList.add("post-header");
@@ -10,11 +6,13 @@ function createAndAppendPostHeaders(id, headerText, columnName) {
   header.innerText = headerText;
 
   // append child to parent
-  headerContainer.appendChild(header);
+  parent.appendChild(header);
 
   // create click event to sort posts upon click on header element
   header.addEventListener("click", () => {
     sortBy(storedData, columnName);
     render();
   });
+
+  return header;
 }
