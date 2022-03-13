@@ -9,6 +9,9 @@ const isSortOrderAscending = {
   currency: false,
   offsetAccount: false,
 };
+
+render();
+
 let postId = 1;
 
 const inputAccount = document.getElementById("account");
