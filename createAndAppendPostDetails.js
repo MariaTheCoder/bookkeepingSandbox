@@ -10,22 +10,32 @@ function createAndAppendPostDetails(
   let post = document.createElement(tag);
   post.classList.add("post-detail");
   if (tag === "select") {
-    const options = [...document.getElementById("debitCredit").options];
+    if (column === "debitCredit") {
+      const options = [...document.getElementById("debitCredit").options];
 
-    const found = options.find((o) => o.value === innerText);
+      const found = options.find((o) => o.value === innerText);
+      let indexOfFound = options.indexOf(found);
 
-    if (found) {
-      let options_str = "";
+      if (found) {
+        let options_str = "";
 
-      for (let i = 0; i < options.length; i++) {
-        const element = options[i];
+        for (let i = 0; i < options.length; i++) {
+          const element = options[i];
 
-        options_str += `<option value="${element.value}">${element.value}</option>`;
+          options_str += `<option value="${element.value}">${element.value}</option>`;
 
-        post.innerHTML = options_str;
+          post.innerHTML = options_str;
+        }
+        post.selectedIndex = `${indexOfFound}`;
       }
-    } else {
+    }
+
+    if (column === "currency") {
       const currencies = [...document.getElementById("currency").options];
+
+      const found = currencies.find((o) => o.value === innerText);
+      let indexOfFound = currencies.indexOf(found);
+
       let options_str = "";
 
       for (let i = 0; i < currencies.length; i++) {
@@ -35,6 +45,7 @@ function createAndAppendPostDetails(
 
         post.innerHTML = options_str;
       }
+      post.selectedIndex = `${indexOfFound}`;
     }
   } else if (tag === "div") {
     post.innerText = innerText;
