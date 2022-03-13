@@ -62,27 +62,15 @@ function render() {
       for (const property in dataColumns) {
         const value = dataColumns[property];
 
-        if (property === "amount") {
-          createAndAppendPostDetails(
-            "div",
-            value,
-            dataObject.postId,
-            property,
-            postContainer,
-            dataColumns.documentNumber,
-            dataObject.selected
-          );
-        } else {
-          createAndAppendPostDetails(
-            "div",
-            value,
-            dataObject.postId,
-            property,
-            postContainer,
-            dataColumns.documentNumber,
-            dataObject.selected
-          );
-        }
+        createAndAppendPostDetails(
+          "div",
+          value,
+          dataObject.postId,
+          property,
+          postContainer,
+          dataColumns.documentNumber,
+          dataObject.selected
+        );
       }
       createActionButtons("edit", postContainer, dataObject);
       createActionButtons("delete", postContainer, dataObject);
