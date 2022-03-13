@@ -12,8 +12,24 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+select {
+  width: 5rem;
+  padding: 1.6px 4px 1.6px 4px;
+}
+
+.input-container {
+  display: contents;
+  width: 100%;
+}
+
 .post-header-container {
   margin-top: 50px;
+}
+
+.buttons {
+  width: 100px;
+  border-radius: 2px;
+  padding: 0px 7px 0px 7px;
 }
 
 .post-header-container,
