@@ -20,12 +20,7 @@ function createAndAppendPostDetails(
       for (let i = 0; i < options.length; i++) {
         const element = options[i];
 
-        options_str +=
-          '<option value="' +
-          element.value +
-          '">' +
-          element.value +
-          "</option>";
+        options_str += `<option value="${element.value}">${element.value}</option>`;
 
         post.innerHTML = options_str;
       }
@@ -36,12 +31,7 @@ function createAndAppendPostDetails(
       for (let i = 0; i < currencies.length; i++) {
         const element = currencies[i];
 
-        options_str +=
-          '<option value="' +
-          element.value +
-          '">' +
-          element.value +
-          "</option>";
+        options_str += `<option value="${element.value}">${element.value}</option>`;
 
         post.innerHTML = options_str;
       }
