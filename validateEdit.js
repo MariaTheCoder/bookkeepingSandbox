@@ -1,5 +1,6 @@
 function validateEdit(postId) {
   let inputData = { columns: {} };
+  let setDebitCredit = "";
 
   // find index of row element in storedData that is to be edited
   const found = storedData.find((post) => post.postId == postId);
@@ -19,13 +20,26 @@ function validateEdit(postId) {
   if (alertMessage.length > 0) return alert(alertMessage);
 
   // add properties and new values to the inputData object
-  collection.forEach((element) => {
-    if (element.getAttribute("data-column") === "amount") {
+  for (let i = 0; i < collection.length; i++) {
+    const element = collection[i];
+
+    if (element.getAttribute("data-column") === "account") {
       inputData.columns[element.getAttribute("data-column")] = element.value;
+
+      if (isCreditDefault(Number(element.value))) {
+        setDebitCredit =
+          document.getElementById("debitCredit").options[1].value;
+      } else {
+        setDebitCredit =
+          document.getElementById("debitCredit").options[0].value;
+      }
+    } else if (element.getAttribute("data-column") === "debitCredit") {
+      inputData.columns[element.getAttribute("data-column")] = setDebitCredit;
     } else {
       inputData.columns[element.getAttribute("data-column")] = element.value;
     }
-  });
+  }
+
   inputData.editable = false;
   inputData.postId = postId;
 
