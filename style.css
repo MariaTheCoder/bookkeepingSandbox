@@ -12,9 +12,8 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-select {
-  width: 5rem;
-  padding: 1.6px 4px 1.6px 4px;
+.select {
+  min-height: 30px;
 }
 
 .input-container {
@@ -22,14 +21,31 @@ select {
   width: 100%;
 }
 
+.input {
+  height: 24px;
+}
+
 .post-header-container {
   margin-top: 50px;
 }
 
 .buttons {
-  width: 100px;
-  border-radius: 2px;
+  width: 130px;
+  height: 30px;
   padding: 0px 7px 0px 7px;
+  background-color: rgb(243, 154, 154);
+  border-color: rgb(251, 212, 212);
+  border-radius: 5px;
+  font-style: italic;
+  box-shadow: 1.5px 1.5px 1px darkgray;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.buttons:hover {
+  background-color: white;
+  color: rgba(245, 64, 64, 0.823);
+  border-color: none;
 }
 
 .post-header-container,
