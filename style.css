@@ -81,5 +81,5 @@ input[type="number"] {
 }
 
 .selected {
-  background-color: aqua;
+  background-color: rgb(224, 226, 226);
 }
