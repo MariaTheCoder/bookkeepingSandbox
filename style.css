@@ -5,15 +5,10 @@
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  margin: 0;
 }
 
 input[type="number"] {
   -moz-appearance: textfield;
-}
-
-.select {
-  min-height: 30px;
 }
 
 .input-container {
@@ -22,7 +17,8 @@ input[type="number"] {
 }
 
 .input {
-  height: 24px;
+  box-sizing: border-box;
+  min-height: 34px;
 }
 
 .post-header-container {
@@ -33,19 +29,23 @@ input[type="number"] {
   width: 130px;
   height: 30px;
   padding: 0px 7px 0px 7px;
+  margin: 14px 0px 14px 0px;
   background-color: rgb(243, 154, 154);
-  border-color: rgb(251, 212, 212);
+  border: 2px solid;
+  border-color: rgba(251, 212, 212, 0.333);
   border-radius: 5px;
+  color: rgb(57, 16, 16);
+  box-shadow: none;
   font-style: italic;
-  box-shadow: 1.5px 1.5px 1px darkgray;
   transition-duration: 0.4s;
   cursor: pointer;
 }
 
 .buttons:hover {
   background-color: white;
-  color: rgba(245, 64, 64, 0.823);
-  border-color: none;
+  color: rgb(199, 58, 58);
+  /* font-weight: bolder; */
+  border-color: rgb(199, 58, 58);
 }
 
 .post-header-container,
