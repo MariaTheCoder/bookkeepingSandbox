@@ -28,15 +28,12 @@ input[type="number"] {
 .buttons {
   width: 130px;
   height: 30px;
-  padding: 0px 7px 0px 7px;
   margin: 14px 0px 14px 0px;
   background-color: rgb(243, 154, 154);
   border: 2px solid;
   border-color: rgba(251, 212, 212, 0.333);
   border-radius: 5px;
   color: rgb(57, 16, 16);
-  box-shadow: none;
-  font-style: italic;
   transition-duration: 0.4s;
   cursor: pointer;
 }
@@ -71,6 +68,7 @@ input[type="number"] {
 
 .post-header {
   font-weight: bold;
+  color: rgb(199, 58, 58);
 }
 
 .post-detail,
