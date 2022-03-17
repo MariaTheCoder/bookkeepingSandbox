@@ -41,7 +41,6 @@ input[type="number"] {
 .buttons:hover {
   background-color: white;
   color: rgb(199, 58, 58);
-  /* font-weight: bolder; */
   border-color: rgb(199, 58, 58);
 }
 
@@ -66,18 +65,15 @@ input[type="number"] {
   border: transparent !important;
 }
 
-.post-header {
-  font-weight: bold;
-  color: rgb(199, 58, 58);
-}
-
 .post-detail,
 .post-header {
   border: 2px solid rgba(0, 0, 0, 0.479);
   border-collapse: collapse;
+}
 
-  background-color: rgba(255, 255, 255, 0);
-  grid-template-columns: inherit;
+.post-header {
+  font-weight: bold;
+  background-color: rgb(138, 228, 238);
 }
 
 .delete-button-container {
