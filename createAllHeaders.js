@@ -24,12 +24,7 @@ function createAllHeaders() {
     headerContainer
   );
 
-  createHeader(
-    "amount-header",
-    "Transaction amount",
-    "amount",
-    headerContainer
-  );
+  createHeader("amount-header", "Amount", "amount", headerContainer);
 
   createHeader("currency-header", "Currency", "currency", headerContainer);
 
