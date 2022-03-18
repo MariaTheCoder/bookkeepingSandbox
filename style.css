@@ -96,3 +96,11 @@ input[type="number"] {
   font-weight: bold;
   color: rgb(199, 58, 58);
 }
+
+.lastPost[data-column="documentNumber"] {
+  border-bottom-left-radius: 5px;
+}
+
+.lastPost[data-column="offsetAccount"] {
+  border-bottom-right-radius: 5px;
+}

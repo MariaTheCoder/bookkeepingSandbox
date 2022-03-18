@@ -5,6 +5,7 @@ function createAndAppendPostDetails(
   column,
   parent,
   documentNumber,
+  isLastPost,
   selected = false
 ) {
   let post = document.createElement(tag);
@@ -55,6 +56,7 @@ function createAndAppendPostDetails(
     post.value = innerText;
   }
 
+  if (isLastPost) post.classList.add("lastPost");
   post.setAttribute("post-id", postId);
   post.setAttribute("data-column", column);
   parent.appendChild(post);

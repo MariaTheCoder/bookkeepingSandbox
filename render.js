@@ -23,6 +23,12 @@ function render() {
     const dataObject = storedData[i];
     const dataColumns = storedData[i].columns;
 
+    if (i === storedData.length - 1) {
+      dataObject.isLastPost = true;
+    } else {
+      dataObject.isLastPost = false;
+    }
+
     if (dataObject.editable) {
       for (const property in dataColumns) {
         const value = dataColumns[property];
@@ -34,6 +40,7 @@ function render() {
             dataObject.postId,
             property,
             postContainer,
+            dataObject.isLastPost,
             dataColumns.documentNumber
           );
         } else if (property === "currency" || property === "debitCredit") {
@@ -43,6 +50,7 @@ function render() {
             dataObject.postId,
             property,
             postContainer,
+            dataObject.isLastPost,
             dataColumns.documentNumber
           );
         } else {
@@ -52,6 +60,7 @@ function render() {
             dataObject.postId,
             property,
             postContainer,
+            dataObject.isLastPost,
             dataColumns.documentNumber
           );
         }
@@ -69,6 +78,7 @@ function render() {
           property,
           postContainer,
           dataColumns.documentNumber,
+          dataObject.isLastPost,
           dataObject.selected
         );
       }
