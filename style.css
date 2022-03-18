@@ -27,7 +27,7 @@ input[type="number"] {
 
 .buttons {
   width: 130px;
-  height: 30px;
+  height: 34px;
   margin: 14px 0px 14px 0px;
   background-color: rgb(243, 154, 154);
   border: 2px solid;
@@ -67,13 +67,24 @@ input[type="number"] {
 
 .post-detail,
 .post-header {
-  border: 2px solid rgba(0, 0, 0, 0.479);
-  border-collapse: collapse;
+  height: 34px;
+  line-height: 34px;
+  border: none;
+  text-align: center;
+}
+
+.post-header[id="documentNumber-header"] {
+  border-top-left-radius: 5px;
+}
+
+.post-header[id="offsetAccount-header"] {
+  border-top-right-radius: 5px;
 }
 
 .post-header {
   font-weight: bold;
-  background-color: rgb(138, 228, 238);
+  color: white;
+  background-color: rgb(231, 99, 99);
 }
 
 .delete-button-container {
@@ -82,4 +93,6 @@ input[type="number"] {
 
 .selected {
   background-color: rgb(224, 226, 226);
+  font-weight: bold;
+  color: rgb(199, 58, 58);
 }
