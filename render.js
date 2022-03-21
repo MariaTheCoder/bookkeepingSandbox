@@ -22,6 +22,8 @@ function render() {
   for (let i = 0; i < storedData.length; i++) {
     const dataObject = storedData[i];
     const dataColumns = storedData[i].columns;
+    const row = document.createElement("div");
+    row.classList.add("post-row");
 
     if (i === storedData.length - 1) {
       dataObject.isLastPost = true;
@@ -39,7 +41,7 @@ function render() {
             value,
             dataObject.postId,
             property,
-            postContainer,
+            row,
             dataObject.isLastPost,
             dataColumns.documentNumber
           );
@@ -49,7 +51,7 @@ function render() {
             value,
             dataObject.postId,
             property,
-            postContainer,
+            row,
             dataObject.isLastPost,
             dataColumns.documentNumber
           );
@@ -59,14 +61,14 @@ function render() {
             value,
             dataObject.postId,
             property,
-            postContainer,
+            row,
             dataObject.isLastPost,
             dataColumns.documentNumber
           );
         }
       }
-      createActionButtons("save", postContainer, dataObject);
-      createActionButtons("delete", postContainer, dataObject);
+      createActionButtons("save", row, dataObject);
+      createActionButtons("delete", row, dataObject);
     } else {
       for (const property in dataColumns) {
         const value = dataColumns[property];
@@ -76,14 +78,16 @@ function render() {
           value,
           dataObject.postId,
           property,
-          postContainer,
+          row,
           dataColumns.documentNumber,
           dataObject.isLastPost,
           dataObject.selected
         );
       }
-      createActionButtons("edit", postContainer, dataObject);
-      createActionButtons("delete", postContainer, dataObject);
+      createActionButtons("edit", row, dataObject);
+      createActionButtons("delete", row, dataObject);
     }
+
+    postContainer.appendChild(row);
   }
 }

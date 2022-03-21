@@ -45,9 +45,10 @@ input[type="number"] {
 }
 
 .post-header-container,
-.created-posts {
+.post-row {
   display: grid;
   grid-template-columns: repeat(8, 150px) repeat(2, 35px);
+  width: fit-content;
 }
 
 .default-text {
@@ -103,4 +104,13 @@ input[type="number"] {
 
 .lastPost[data-column="offsetAccount"] {
   border-bottom-right-radius: 5px;
+}
+
+.post-row:nth-child(even) {
+  background-color: #ffdddd;
+}
+
+.post-row > .edit.post-detail,
+.post-row > .delete.post-detail {
+  background-color: #ffffff;
 }
