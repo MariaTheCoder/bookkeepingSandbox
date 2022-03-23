@@ -1,8 +1,8 @@
-function removeDataObjectFromDB(documentNumber) {
+function removeDataObjectFromDB(postId) {
   for (let i = 0; i < storedData.length; i++) {
-    const documentNumberOfStoredData = storedData[i].columns["documentNumber"];
+    const postIdOfStoredData = storedData[i].postId;
 
-    if (documentNumberOfStoredData === documentNumber) {
+    if (postIdOfStoredData === postId) {
       storedData.splice(i, 1);
       i--;
     }
