@@ -35,5 +35,7 @@ function createAllHeaders() {
     headerContainer
   );
 
+  createHeader("action-header", "Actions", "actions", headerContainer);
+
   return headerContainer;
 }

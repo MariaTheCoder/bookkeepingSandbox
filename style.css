@@ -78,7 +78,7 @@ input[type="number"] {
   border-top-left-radius: 5px;
 }
 
-.post-header[id="offsetAccount-header"] {
+.post-header[id="action-header"] {
   border-top-right-radius: 5px;
 }
 
@@ -86,6 +86,10 @@ input[type="number"] {
   font-weight: bold;
   color: white;
   background-color: rgb(231, 99, 99);
+}
+
+#action-header {
+  grid-column: 9 / span 2;
 }
 
 .delete-button-container {
@@ -98,19 +102,19 @@ input[type="number"] {
   color: rgb(199, 58, 58);
 }
 
-.lastPost[data-column="documentNumber"] {
+.lastRow {
   border-bottom-left-radius: 5px;
-}
-
-.lastPost[data-column="offsetAccount"] {
   border-bottom-right-radius: 5px;
 }
 
 .post-row:nth-child(even) {
   background-color: #ffdddd;
 }
+/* .post-row:last-child {
+  border-radius: 20px;
+} */
 
 .post-row > .edit.post-detail,
 .post-row > .delete.post-detail {
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
 }
