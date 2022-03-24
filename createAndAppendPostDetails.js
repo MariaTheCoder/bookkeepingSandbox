@@ -4,7 +4,6 @@ function createAndAppendPostDetails(
   postId,
   column,
   parent,
-  documentNumber,
   isLastPost,
   selected = false
 ) {
