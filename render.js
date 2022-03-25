@@ -24,11 +24,10 @@ function render() {
     const dataColumns = storedData[i].columns;
     const row = document.createElement("div");
     row.classList.add("post-row");
+    dataObject.isLastPost = false;
 
     if (i === storedData.length - 1) {
-      dataObject.isLastPost = true;
-    } else {
-      dataObject.isLastPost = false;
+      row.classList.add("lastRow");
     }
 
     if (dataObject.editable) {
@@ -42,8 +41,7 @@ function render() {
             dataObject.postId,
             property,
             row,
-            dataObject.isLastPost,
-            dataColumns.documentNumber
+            dataObject.isLastPost
           );
         } else if (property === "currency" || property === "debitCredit") {
           createAndAppendPostDetails(
@@ -52,8 +50,7 @@ function render() {
             dataObject.postId,
             property,
             row,
-            dataObject.isLastPost,
-            dataColumns.documentNumber
+            dataObject.isLastPost
           );
         } else {
           createAndAppendPostDetails(
@@ -62,8 +59,7 @@ function render() {
             dataObject.postId,
             property,
             row,
-            dataObject.isLastPost,
-            dataColumns.documentNumber
+            dataObject.isLastPost
           );
         }
       }
@@ -79,13 +75,12 @@ function render() {
           dataObject.postId,
           property,
           row,
-          dataColumns.documentNumber,
           dataObject.isLastPost,
           dataObject.selected
         );
       }
-      createActionButtons("edit", row, dataObject);
-      createActionButtons("delete", row, dataObject);
+      createActionButtons("edit", row, dataObject, dataObject.selected);
+      createActionButtons("delete", row, dataObject, dataObject.selected);
     }
 
     postContainer.appendChild(row);

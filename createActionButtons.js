@@ -1,4 +1,4 @@
-function createActionButtons(action, parent, dataObject) {
+function createActionButtons(action, parent, dataObject, selected = false) {
   let newAction = document.createElement("span");
   const postId = dataObject.postId;
 
@@ -22,7 +22,12 @@ function createActionButtons(action, parent, dataObject) {
     newAction.addEventListener("click", () => validateEdit(postId));
   }
 
-  newAction.className = action + " post-detail";
+  // newAction.className = action + " post-detail";
+  if (selected) {
+    newAction.className = `${action} post-detail selected`;
+  } else {
+    newAction.className = `${action} post-detail`;
+  }
   newAction.id = action;
   parent.appendChild(newAction);
   return newAction;
