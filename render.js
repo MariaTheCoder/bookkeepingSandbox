@@ -17,6 +17,7 @@ function render() {
     // if posts are found in the database, create headers and a button to delete all posts upon click
     createAllHeaders();
     createDeleteAllPostsButton();
+    createDownloadCSVButton();
   }
 
   for (let i = 0; i < storedData.length; i++) {
