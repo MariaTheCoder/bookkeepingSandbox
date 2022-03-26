@@ -92,8 +92,14 @@ input[type="number"] {
   grid-column: 9 / span 2;
 }
 
-.delete-button-container {
-  margin-top: 20px;
+.delete-button-container,
+.download-csv-container {
+  margin: 10px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .selected {
