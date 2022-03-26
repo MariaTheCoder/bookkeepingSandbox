@@ -26,7 +26,7 @@ input[type="number"] {
 }
 
 .buttons {
-  width: 130px;
+  width: fit-content;
   height: 34px;
   margin: 14px 0px 14px 0px;
   background-color: rgb(243, 154, 154);
