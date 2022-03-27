@@ -17,10 +17,12 @@ function isCorrectInputType(inputColumnData) {
       (expectedTypes[attribute] === "string" &&
         expectedTypes[attribute] !== typeof element.value) ||
       (expectedTypes[attribute] === "number" &&
-        isNaN(parseFloat(element.value))) ||
+        isNaN(parseFloat(element.value)) &&
+        attribute === "amount") ||
       (expectedTypes[attribute] === "number" &&
-        !!element.value &&
-        element.value <= 0)
+        attribute !== "amount" &&
+        !!parseFloat(element.value) &&
+        parseFloat(element.value) <= 0)
     )
       validatorObject[attribute] = false;
   }
