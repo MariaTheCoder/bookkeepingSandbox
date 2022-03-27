@@ -12,6 +12,7 @@ function isCorrectInputType(inputColumnData) {
     const element = inputColumnData[i];
     const attribute = element.getAttribute("data-column");
     validatorObject[attribute] = true;
+    console.log(attribute !== "offsetAccount");
 
     if (
       (expectedTypes[attribute] === "string" &&
