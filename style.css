@@ -21,10 +21,6 @@ input[type="number"] {
   min-height: 34px;
 }
 
-.post-header-container {
-  margin-top: 50px;
-}
-
 .buttons {
   width: fit-content;
   height: 34px;
@@ -116,11 +112,8 @@ input[type="number"] {
 .post-row:nth-child(even) {
   background-color: #ffdddd;
 }
-/* .post-row:last-child {
-  border-radius: 20px;
-} */
-/* 
-.post-row > .edit.post-detail,
-.post-row > .delete.post-detail {
-  background-color: #ffffff;
-} */
+
+.imbalance {
+  margin: 40px 0px 15px 0px;
+  color: red;
+}
