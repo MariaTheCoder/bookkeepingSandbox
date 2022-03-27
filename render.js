@@ -18,6 +18,7 @@ function render() {
     createAllHeaders();
     createDeleteAllPostsButton();
     createDownloadCSVButton();
+    balanceOfPosts();
   }
 
   for (let i = 0; i < storedData.length; i++) {
